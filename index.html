@@ -2,199 +2,177 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Quiz - Viens et suis-moi</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Styles comme précédemment... inchangés */
-    /* ... */
-    #quiz-area.hidden { display: none; }
+    :root {
+      --primary-color: #005A94;
+      --secondary-color: #F9FAFB;
+      --card-color: #ffffff;
+      --accent-color: #D8EAFB;
+      --text-color: #1F2937;
+      --success-color: #10B981;
+      --danger-color: #EF4444;
+      --border-radius: 12px;
+      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    #app-container {
+      background-color: var(--card-color);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      max-width: 700px;
+      width: 100%;
+    }
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p, label {
+      font-size: 1rem;
+    }
+
+    blockquote {
+      background-color: var(--accent-color);
+      padding: 1rem;
+      border-left: 4px solid var(--primary-color);
+      margin: 1rem 0;
+      font-style: italic;
+      border-radius: var(--border-radius);
+    }
+
+    .selector-container {
+      margin-top: 1.5rem;
+    }
+
+    select {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: var(--border-radius);
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    #quiz-area {
+      margin-top: 2rem;
+    }
+
+    #quiz-area.hidden {
+      display: none;
+    }
+
+    #question {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .answer-btn {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+      border-radius: var(--border-radius);
+      border: 2px solid transparent;
+      background-color: #f3f4f6;
+      cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .answer-btn:hover:not(:disabled) {
+      background-color: #e5e7eb;
+      border-color: var(--primary-color);
+    }
+
+    .answer-btn.correct {
+      background-color: #dcfce7;
+      border-color: var(--success-color);
+      color: var(--success-color);
+      font-weight: bold;
+    }
+
+    .answer-btn.incorrect {
+      background-color: #fee2e2;
+      border-color: var(--danger-color);
+      color: var(--danger-color);
+      font-weight: bold;
+    }
+
+    #next-btn {
+      display: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    #next-btn:hover {
+      background-color: #004374;
+    }
+
+    #feedback {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
   </style>
 </head>
 <body>
   <div id="app-container">
-    <div id="welcome-message">
-      <h1>Bienvenue au Quiz "Viens et suis-moi" !</h1>
-      <p>
-        Ce quiz est conçu pour compléter votre étude personnelle et familiale des Écritures.
-        Utilisez-le comme un outil pour réviser les principes que vous avez étudiés durant la semaine et pour approfondir votre compréhension de l'Évangile.
-      </p>
-      <blockquote id="quote">
-        <p>
-          "Je vous promets que si vous vous faites les délices des paroles du Christ chaque jour, mois après mois,
-          les paroles du Christ vous diront tout ce que vous devez faire."
-        </p>
-        <footer>- Russell M. Nelson</footer>
-      </blockquote>
+    <h1>Bienvenue au Quiz "Viens et suis-moi"</h1>
+    <p>Ce quiz vous aide à réviser les principes étudiés chaque semaine. Bonne chance !</p>
+    <blockquote>
+      "Je vous promets que si vous vous faites les délices des paroles du Christ chaque jour, mois après mois,
+      les paroles du Christ vous diront tout ce que vous devez faire."<br />
+      <strong>- Président Russell M. Nelson</strong>
+    </blockquote>
+
+    <div class="selector-container">
+      <label for="week-selector">Semaine d'étude :</label>
+      <select id="week-selector"></select>
     </div>
 
     <div class="selector-container">
-      <label for="week-selector">Choisissez une semaine d'étude :</label>
-      <select id="week-selector"></select>
-    </div>
-    <div class="selector-container">
-      <label for="day-selector">Choisissez un jour :</label>
+      <label for="day-selector">Jour :</label>
       <select id="day-selector"></select>
     </div>
 
     <div id="quiz-area" class="hidden">
-      <div id="question">Veuillez sélectionner une semaine et un jour pour commencer.</div>
+      <div id="question"></div>
       <div id="answer-buttons"></div>
       <div id="feedback"></div>
       <button id="next-btn">Question suivante</button>
     </div>
   </div>
-
-  <script>
-    const weekSelector = document.getElementById('week-selector');
-    const daySelector = document.getElementById('day-selector');
-    const quizArea = document.getElementById('quiz-area');
-    const questionElement = document.getElementById('question');
-    const answerButtonsElement = document.getElementById('answer-buttons');
-    const feedbackElement = document.getElementById('feedback');
-    const nextButton = document.getElementById('next-btn');
-
-    let allData = {};
-    let currentQuestions = [];
-    let availableQuestions = [];
-    let currentQuestionIndex;
-
-    async function loadQuestions() {
-      try {
-        const response = await fetch('questions.json');
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        allData = await response.json();
-
-        populateWeekSelector();
-        weekSelector.selectedIndex = 0;
-        handleWeekChange();
-      } catch (error) {
-        console.error("Erreur lors du chargement du fichier de questions:", error);
-        questionElement.innerText = "Impossible de charger les questions.";
-      }
-    }
-
-    function populateWeekSelector() {
-      weekSelector.innerHTML = '';
-      Object.keys(allData).forEach(week => {
-        const option = document.createElement('option');
-        option.value = week;
-        option.innerText = week;
-        weekSelector.appendChild(option);
-      });
-    }
-
-    function populateDaySelector(weekData) {
-      daySelector.innerHTML = '';
-      Object.keys(weekData).forEach(day => {
-        if (weekData[day].length > 0) {
-          const option = document.createElement('option');
-          option.value = day;
-          option.innerText = day.charAt(0).toUpperCase() + day.slice(1);
-          daySelector.appendChild(option);
-        }
-      });
-      if (daySelector.options.length > 0) {
-        daySelector.selectedIndex = 0;
-        handleDayChange();
-      } else {
-        quizArea.classList.add('hidden');
-      }
-    }
-
-    function handleWeekChange() {
-      const selectedWeek = weekSelector.value;
-      const weekData = allData[selectedWeek];
-      populateDaySelector(weekData);
-    }
-
-    function handleDayChange() {
-      const selectedWeek = weekSelector.value;
-      const selectedDay = daySelector.value;
-
-      if (selectedWeek && selectedDay && allData[selectedWeek][selectedDay]) {
-        currentQuestions = allData[selectedWeek][selectedDay];
-        startQuiz();
-      } else {
-        quizArea.classList.add('hidden');
-      }
-    }
-
-    function startQuiz() {
-      if (currentQuestions.length === 0) {
-        quizArea.classList.remove('hidden');
-        questionElement.innerText = "Il n'y a pas de questions pour ce jour.";
-        answerButtonsElement.innerHTML = '';
-        feedbackElement.innerText = '';
-        nextButton.style.display = 'none';
-        return;
-      }
-
-      quizArea.classList.remove('hidden');
-      availableQuestions = [...currentQuestions];
-      feedbackElement.innerText = '';
-      nextButton.innerText = "Question suivante";
-      showNextQuestion();
-    }
-
-    function showNextQuestion() {
-      if (availableQuestions.length === 0) {
-        questionElement.innerText = "Quiz du jour terminé !";
-        answerButtonsElement.innerHTML = '';
-        nextButton.innerText = "Recommencer";
-        nextButton.onclick = startQuiz;
-        nextButton.style.display = 'block';
-      } else {
-        nextButton.onclick = showNextQuestion;
-        currentQuestionIndex = Math.floor(Math.random() * availableQuestions.length);
-        showQuestion(availableQuestions[currentQuestionIndex]);
-      }
-    }
-
-    function showQuestion(question) {
-      questionElement.innerText = question.question;
-      answerButtonsElement.innerHTML = '';
-      feedbackElement.innerText = '';
-      nextButton.style.display = 'none';
-
-      question.answers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('answer-btn');
-        if (answer.correct) button.dataset.correct = "true";
-        button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
-      });
-    }
-
-    function selectAnswer(e) {
-      const selectedButton = e.target;
-      const correct = selectedButton.dataset.correct === "true";
-
-      Array.from(answerButtonsElement.children).forEach(button => {
-        button.disabled = true;
-        if (button.dataset.correct === "true") {
-          button.classList.add('correct');
-        } else {
-          button.classList.add('incorrect');
-        }
-      });
-
-      feedbackElement.innerText = correct ? "Bonne réponse !" : "Mauvaise réponse.";
-      nextButton.style.display = 'block';
-
-      // Retirer la question utilisée
-      availableQuestions.splice(currentQuestionIndex, 1);
-    }
-
-    // ➕ Ajout des écouteurs sur les menus
-    weekSelector.addEventListener('change', handleWeekChange);
-    daySelector.addEventListener('change', handleDayChange);
-
-    // Chargement initial
-    loadQuestions();
-  </script>
 </body>
 </html>
