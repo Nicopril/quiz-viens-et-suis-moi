@@ -174,5 +174,151 @@
       <button id="next-btn">Question suivante</button>
     </div>
   </div>
+
+  <script>
+    const weekSelector = document.getElementById('week-selector');
+    const daySelector = document.getElementById('day-selector');
+    const quizArea = document.getElementById('quiz-area');
+    const questionElement = document.getElementById('question');
+    const answerButtonsElement = document.getElementById('answer-buttons');
+    const feedbackElement = document.getElementById('feedback');
+    const nextButton = document.getElementById('next-btn');
+
+    let allData = {};
+    let currentQuestions = [];
+    let availableQuestions = [];
+    let currentQuestionIndex;
+
+    async function loadQuestions() {
+      try {
+        const response = await fetch('./questions.json');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        allData = await response.json();
+        populateWeekSelector();
+        weekSelector.selectedIndex = 0;
+        handleWeekChange();
+      } catch (error) {
+        console.error("Erreur lors du chargement du fichier de questions:", error);
+        questionElement.innerText = "Impossible de charger les questions.";
+      }
+    }
+
+    function populateWeekSelector() {
+      weekSelector.innerHTML = '';
+      Object.keys(allData).forEach(week => {
+        const option = document.createElement('option');
+        option.value = week;
+        option.innerText = week;
+        weekSelector.appendChild(option);
+      });
+    }
+
+    function populateDaySelector(weekData) {
+      daySelector.innerHTML = '';
+      Object.keys(weekData).forEach(day => {
+        if (weekData[day].length > 0) {
+          const option = document.createElement('option');
+          option.value = day;
+          option.innerText = day.charAt(0).toUpperCase() + day.slice(1);
+          daySelector.appendChild(option);
+        }
+      });
+      if (daySelector.options.length > 0) {
+        daySelector.selectedIndex = 0;
+        handleDayChange();
+      } else {
+        quizArea.classList.add('hidden');
+      }
+    }
+
+    function handleWeekChange() {
+      const selectedWeek = weekSelector.value;
+      const weekData = allData[selectedWeek];
+      populateDaySelector(weekData);
+    }
+
+    function handleDayChange() {
+      const selectedWeek = weekSelector.value;
+      const selectedDay = daySelector.value;
+
+      if (selectedWeek && selectedDay && allData[selectedWeek][selectedDay]) {
+        currentQuestions = allData[selectedWeek][selectedDay];
+        startQuiz();
+      } else {
+        quizArea.classList.add('hidden');
+      }
+    }
+
+    function startQuiz() {
+      if (currentQuestions.length === 0) {
+        quizArea.classList.remove('hidden');
+        questionElement.innerText = "Il n'y a pas de questions pour ce jour.";
+        answerButtonsElement.innerHTML = '';
+        feedbackElement.innerText = '';
+        nextButton.style.display = 'none';
+        return;
+      }
+
+      quizArea.classList.remove('hidden');
+      availableQuestions = [...currentQuestions];
+      feedbackElement.innerText = '';
+      nextButton.innerText = "Question suivante";
+      showNextQuestion();
+    }
+
+    function showNextQuestion() {
+      if (availableQuestions.length === 0) {
+        questionElement.innerText = "Quiz du jour terminé !";
+        answerButtonsElement.innerHTML = '';
+        nextButton.innerText = "Recommencer";
+        nextButton.onclick = startQuiz;
+        nextButton.style.display = 'block';
+      } else {
+        nextButton.onclick = showNextQuestion;
+        currentQuestionIndex = Math.floor(Math.random() * availableQuestions.length);
+        showQuestion(availableQuestions[currentQuestionIndex]);
+      }
+    }
+
+    function showQuestion(question) {
+      questionElement.innerText = question.question;
+      answerButtonsElement.innerHTML = '';
+      feedbackElement.innerText = '';
+      nextButton.style.display = 'none';
+
+      question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('answer-btn');
+        if (answer.correct) button.dataset.correct = "true";
+        button.addEventListener('click', selectAnswer);
+        answerButtonsElement.appendChild(button);
+      });
+    }
+
+    function selectAnswer(e) {
+      const selectedButton = e.target;
+      const correct = selectedButton.dataset.correct === "true";
+
+      Array.from(answerButtonsElement.children).forEach(button => {
+        button.disabled = true;
+        if (button.dataset.correct === "true") {
+          button.classList.add('correct');
+        } else {
+          button.classList.add('incorrect');
+        }
+      });
+
+      feedbackElement.innerText = correct ? "Bonne réponse !" : "Mauvaise réponse.";
+      nextButton.style.display = 'block';
+
+      availableQuestions.splice(currentQuestionIndex, 1);
+    }
+
+    weekSelector.addEventListener('change', handleWeekChange);
+    daySelector.addEventListener('change', handleDayChange);
+    loadQuestions();
+  </script>
 </body>
 </html>
+
