@@ -1,102 +1,839 @@
 {
-    "4–10 août | D&A 85–87": {
-        "jour1": [
-            { "question": "Dans D&A 85, qui est le 'serviteur' que le Seigneur commandera pour 'mettre en ordre la maison de Dieu' ?", "answers": [{ "text": "Joseph Smith", "correct": false }, { "text": "Un descendant d'Aaron puissant et fort", "correct": true }, { "text": "L'évêque président", "correct": false }] },
-            { "question": "Selon D&A 85:8, que doit-on faire pour que son nom ne soit pas effacé du livre de la loi de Dieu ?", "answers": [{ "text": "Payer la dîme et les offrandes", "correct": true }, { "text": "Assister à toutes les réunions", "correct": false }, { "text": "Servir une mission", "correct": false }] },
-            { "question": "De quel événement historique la section 86 tire-t-elle sa parabole ?", "answers": [{ "text": "La parabole du semeur", "correct": false }, { "text": "La parabole du blé et de l'ivraie", "correct": true }, { "text": "La parabole du fils prodigue", "correct": false }] },
-            { "question": "Dans la parabole du blé et de l'ivraie (D&A 86), que représente le champ ?", "answers": [{ "text": "Le monde", "correct": true }, { "text": "L'Église", "correct": false }, { "text": "Le cœur de l'homme", "correct": false }] }
-        ],
-        "jour2": [
-            { "question": "D'après D&A 87, quelle est la cause de la guerre qui 's'abattra bientôt sur toutes les nations' ?", "answers": [{ "text": "Des conflits politiques", "correct": false }, { "text": "Le problème de l'esclavage", "correct": true }, { "text": "Des famines", "correct": false }] },
-            { "question": "Où cette prophétie de guerre (D&A 87) commencerait-elle ?", "answers": [{ "text": "En Caroline du Sud", "correct": true }, { "text": "À Jérusalem", "correct": false }, { "text": "En Missouri", "correct": false }] },
-            { "question": "Quel conseil le Seigneur donne-t-il à ses saints dans D&A 87:8 pour faire face à ces temps difficiles ?", "answers": [{ "text": "De fuir vers les montagnes", "correct": false }, { "text": "De se tenir en de saints lieux et de ne pas se laisser ébranler", "correct": true }, { "text": "De prendre les armes pour se défendre", "correct": false }] },
-            { "question": "Dans D&A 86, que représente 'l'ivraie' ?", "answers": [{ "text": "Les non-croyants", "correct": false }, { "text": "Les enfants du malin", "correct": true }, { "text": "Les doutes", "correct": false }] }
-        ],
-        "jour3": [], "jour4": [], "jour5": []
-    },
-    "11–17 août | D&A 88": {
-        "jour1": [
-            { "question": "Comment la section 88 est-elle surnommée par le prophète Joseph Smith ?", "answers": [{ "text": "La Parole de Sagesse", "correct": false }, { "text": "'Olive Leaf' (la feuille d'olivier)", "correct": true }, { "text": "La Vision", "correct": false }] },
-            { "question": "D'après D&A 88:7-13, qu'est-ce que la 'lumière du Christ' ?", "answers": [{ "text": "La loi par laquelle tout est gouverné", "correct": true }, { "text": "Une métaphore pour la connaissance", "correct": false }, { "text": "Le Saint-Esprit", "correct": false }] },
-            { "question": "Quel commandement est donné dans D&A 88:118 pour chercher la connaissance ?", "answers": [{ "text": "Cherchez la connaissance par l'étude et aussi par la foi", "correct": true }, { "text": "Lisez les Écritures chaque jour", "correct": false }, { "text": "Allez à l'université", "correct": false }] },
-            { "question": "À quoi servira 'l'École des prophètes' mentionnée dans cette section ?", "answers": [{ "text": "À instruire les frères dans toutes les choses du royaume", "correct": true }, { "text": "À apprendre les langues anciennes", "correct": false }, { "text": "À former des dirigeants politiques", "correct": false }] }
-        ],
-        "jour2": [
-            { "question": "Selon D&A 88, qu'arrivera-t-il à la terre pour qu'elle devienne le royaume céleste ?", "answers": [{ "text": "Elle sera détruite et reconstruite", "correct": false }, { "text": "Elle sera sanctifiée, mourra et sera ressuscitée", "correct": true }, { "text": "Elle fusionnera avec le soleil", "correct": false }] },
-            { "question": "Quel principe de la résurrection est enseigné dans D&A 88 ?", "answers": [{ "text": "Le corps que vous déposez ressuscitera", "correct": true }, { "text": "Seuls les justes ressusciteront", "correct": false }, { "text": "Nous recevrons un corps différent", "correct": false }] },
-            { "question": "Que nous est-il commandé de faire dans D&A 88:124 ?", "answers": [{ "text": "De nous organiser", "correct": false }, { "text": "De cesser d'être oisifs et impurs", "correct": true }, { "text": "De construire un temple", "correct": false }] },
-            { "question": "Quel est l'ordre des salutations prescrit pour l'École des prophètes ?", "answers": [{ "text": "Se serrer la main en signe d'alliance", "correct": false }, { "text": "S'élever les mains au ciel et saluer au nom de Jésus-Christ", "correct": true }, { "text": "S'incliner en signe de respect", "correct": false }] }
-        ],
-        "jour3": [], "jour4": [], "jour5": []
-    },
-    "18–24 août | D&A 89–92": {
-        "jour1": [
-            { "question": "Quel est le nom commun de la révélation contenue dans la section 89 ?", "answers": [{ "text": "La Loi de Consécration", "correct": false }, { "text": "La Parole de Sagesse", "correct": true }, { "text": "La loi de la dîme", "correct": false }] },
-            { "question": "Quelles substances sont spécifiquement déconseillées dans la Parole de Sagesse ?", "answers": [{ "text": "Le vin, les boissons fortes, le tabac et les boissons chaudes", "correct": true }, { "text": "Le sucre et le gras", "correct": false }, { "text": "La viande rouge", "correct": false }] },
-            { "question": "Quelles sont les promesses pour ceux qui respectent la Parole de Sagesse ?", "answers": [{ "text": "La santé, des trésors de connaissance et la protection de l'ange destructeur", "correct": true }, { "text": "La richesse matérielle", "correct": false }, { "text": "La popularité", "correct": false }] },
-            { "question": "À qui la section 90 est-elle adressée, les constituant comme Première Présidence de l'Église ?", "answers": [{ "text": "Joseph Smith, Sidney Rigdon et Frederick G. Williams", "correct": true }, { "text": "Joseph Smith, Oliver Cowdery et David Whitmer", "correct": false }, { "text": "Les douze apôtres", "correct": false }] }
-        ],
-        "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "25–31 août | D&A 93": {
-        "jour1": [
-            { "question": "D'après D&A 93, comment Jésus a-t-il reçu la plénitude de la gloire du Père ?", "answers": [{ "text": "Il l'a eue dès la naissance", "correct": false }, { "text": "Il l'a reçue 'grâce sur grâce'", "correct": true }, { "text": "Après sa résurrection seulement", "correct": false }] },
-            { "question": "Quelle est la définition de la 'vérité' donnée dans D&A 93:24 ?", "answers": [{ "text": "La connaissance des choses telles qu'elles sont, telles qu'elles étaient et telles qu'elles sont à venir", "correct": true }, { "text": "Ce que le prophète déclare", "correct": false }, { "text": "La parole de Dieu", "correct": false }] },
-            { "question": "De quoi l'homme était-il au commencement avec Dieu ?", "answers": [{ "text": "Un esprit", "correct": true }, { "text": "Une idée", "correct": false }, { "text": "Rien", "correct": false }] },
-            { "question": "Quelle est la 'gloire de Dieu' selon D&A 93:36 ?", "answers": [{ "text": "Son pouvoir", "correct": false }, { "text": "Son intelligence", "correct": true }, { "text": "Sa richesse", "correct": false }] }
-        ],
-        "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "1–7 septembre | D&A 94–97": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "8–14 septembre | D&A 98–101": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "15–21 septembre | D&A 102–105": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "22–28 septembre | D&A 106–108": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "29 sept.–5 oct. | D&A 109–110": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "6–12 octobre | D&A 111–114": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "13–19 octobre | D&A 115–120": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "20–26 octobre | D&A 121–123": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "27 oct.–2 nov. | D&A 124": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "3–9 novembre | D&A 125–128": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "10–16 novembre | D&A 129–132": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "17–23 novembre | D&A 133–134": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "24–30 novembre | D&A 135–136": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "1–7 décembre | D&A 137–138": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "8–14 décembre | Noël": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "15–21 décembre | Révision": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    },
-    "22–28 décembre | Révision": {
-        "jour1": [], "jour2": [], "jour3": [], "jour4": [], "jour5": []
-    }
+  "4–10 août | D&A 85–87": {
+    "jour1": [
+      {
+        "question": "Qui est le 'serviteur' mentionné dans D&A 85:7 ?",
+        "answers": [
+          {
+            "text": "Un descendant d'Aaron puissant et fort",
+            "correct": true
+          },
+          {
+            "text": "Joseph Smith",
+            "correct": false
+          },
+          {
+            "text": "L'évêque président",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 85:8, que doit-on faire pour ne pas voir son nom effacé du livre de la loi de Dieu ?",
+        "answers": [
+          {
+            "text": "Payer la dîme et les offrandes",
+            "correct": true
+          },
+          {
+            "text": "Servir une mission",
+            "correct": false
+          },
+          {
+            "text": "Assister à toutes les réunions",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Dans D&A 86, quelle parabole est utilisée ?",
+        "answers": [
+          {
+            "text": "Le blé et l’ivraie",
+            "correct": true
+          },
+          {
+            "text": "Le fils prodigue",
+            "correct": false
+          },
+          {
+            "text": "Le semeur et les terrains",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Dans D&A 86, que représente le champ ?",
+        "answers": [
+          {
+            "text": "Le monde",
+            "correct": true
+          },
+          {
+            "text": "L'Église",
+            "correct": false
+          },
+          {
+            "text": "Le cœur humain",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour2": [
+      {
+        "question": "Quelle cause est à l'origine de la guerre annoncée dans D&A 87 ?",
+        "answers": [
+          {
+            "text": "La question de l’esclavage",
+            "correct": true
+          },
+          {
+            "text": "Des famines",
+            "correct": false
+          },
+          {
+            "text": "Des conflits politiques",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Où la prophétie de guerre devait-elle commencer selon D&A 87 ?",
+        "answers": [
+          {
+            "text": "En Caroline du Sud",
+            "correct": true
+          },
+          {
+            "text": "En Missouri",
+            "correct": false
+          },
+          {
+            "text": "À Jérusalem",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que recommande D&A 87:8 pour affronter ces temps ?",
+        "answers": [
+          {
+            "text": "Se tenir en des lieux saints",
+            "correct": true
+          },
+          {
+            "text": "Prendre les armes",
+            "correct": false
+          },
+          {
+            "text": "Fuir vers les montagnes",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Dans D&A 86, que représente l’ivraie ?",
+        "answers": [
+          {
+            "text": "Les enfants du malin",
+            "correct": true
+          },
+          {
+            "text": "Les doutes",
+            "correct": false
+          },
+          {
+            "text": "Les non-croyants",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour3": [
+      {
+        "question": "Dans D&A 86, qui est le semeur de la bonne semence ?",
+        "answers": [
+          {
+            "text": "Jésus-Christ",
+            "correct": true
+          },
+          {
+            "text": "Joseph Smith",
+            "correct": false
+          },
+          {
+            "text": "L’ange moissonneur",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Dans D&A 86, que représentent « les enfants du royaume » ?",
+        "answers": [
+          {
+            "text": "La bonne semence (le blé)",
+            "correct": true
+          },
+          {
+            "text": "Les traditions des hommes",
+            "correct": false
+          },
+          {
+            "text": "Les anges",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 86, quand a lieu la moisson ?",
+        "answers": [
+          {
+            "text": "À la fin du monde (le jugement)",
+            "correct": true
+          },
+          {
+            "text": "Au début de chaque dispensation",
+            "correct": false
+          },
+          {
+            "text": "Après la mort de chacun",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Dans D&A 86, qui sont les moissonneurs ?",
+        "answers": [
+          {
+            "text": "Les anges",
+            "correct": true
+          },
+          {
+            "text": "Les apôtres",
+            "correct": false
+          },
+          {
+            "text": "Les rois de la terre",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour4": [
+      {
+        "question": "Pourquoi le maître permet-il à l’ivraie de croître avec le blé (D&A 86) ?",
+        "answers": [
+          {
+            "text": "Pour ne pas déraciner le blé en l’arrachant",
+            "correct": true
+          },
+          {
+            "text": "Parce que le maître est absent",
+            "correct": false
+          },
+          {
+            "text": "Pour accélérer la moisson",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 86, que doivent faire les saints en attendant la moisson ?",
+        "answers": [
+          {
+            "text": "Demeurer fidèles et patients dans l’œuvre",
+            "correct": true
+          },
+          {
+            "text": "Séparer eux-mêmes l’ivraie du blé",
+            "correct": false
+          },
+          {
+            "text": "Juger ceux qui diffèrent",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que rappelle le Seigneur au sujet des alliances (D&A 86:8–10) ?",
+        "answers": [
+          {
+            "text": "Il se souvient de l’alliance faite avec les pères",
+            "correct": true
+          },
+          {
+            "text": "Il abolit les alliances anciennes",
+            "correct": false
+          },
+          {
+            "text": "Il remplace l’alliance par des traditions",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Comment « devenir du blé » spirituellement parlant ?",
+        "answers": [
+          {
+            "text": "Recevoir la parole avec foi et agir en conséquence",
+            "correct": true
+          },
+          {
+            "text": "Accumuler de la connaissance sans obéir",
+            "correct": false
+          },
+          {
+            "text": "Éviter toute épreuve et tout service",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour5": [
+      {
+        "question": "Selon D&A 87, où la guerre prophétisée devait-elle commencer ?",
+        "answers": [
+          {
+            "text": "En Caroline du Sud",
+            "correct": true
+          },
+          {
+            "text": "En Angleterre",
+            "correct": false
+          },
+          {
+            "text": "En Californie",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 87, quelle question alimenterait le conflit ?",
+        "answers": [
+          {
+            "text": "La question de l’esclavage",
+            "correct": true
+          },
+          {
+            "text": "La monnaie d’or et d’argent",
+            "correct": false
+          },
+          {
+            "text": "La colonisation de l’Ouest",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel conseil donne D&A 87:8 face aux troubles ?",
+        "answers": [
+          {
+            "text": "Se tenir en des lieux saints sans se laisser ébranler",
+            "correct": true
+          },
+          {
+            "text": "Prendre les armes pour se défendre",
+            "correct": false
+          },
+          {
+            "text": "Fuir vers Jérusalem",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que dit D&A 87 au sujet de l’étendue des guerres ?",
+        "answers": [
+          {
+            "text": "Elles se répandront parmi toutes les nations",
+            "correct": true
+          },
+          {
+            "text": "Elles seront limitées aux Amériques",
+            "correct": false
+          },
+          {
+            "text": "Elles cesseront rapidement",
+            "correct": false
+          }
+        ]
+      }
+    ]
+  },
+  "11–17 août | D&A 88": {
+    "jour1": [
+      {
+        "question": "Comment Joseph Smith a-t-il surnommé la section 88 ?",
+        "answers": [
+          {
+            "text": "Olive Leaf (la feuille d'olivier)",
+            "correct": true
+          },
+          {
+            "text": "La Vision",
+            "correct": false
+          },
+          {
+            "text": "La Parole de Sagesse",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Qu'est-ce que la lumière du Christ selon D&A 88:7-13 ?",
+        "answers": [
+          {
+            "text": "La loi par laquelle tout est gouverné",
+            "correct": true
+          },
+          {
+            "text": "Une métaphore pour la connaissance",
+            "correct": false
+          },
+          {
+            "text": "Le Saint-Esprit",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 88:118, comment chercher la connaissance ?",
+        "answers": [
+          {
+            "text": "Par l’étude et aussi par la foi",
+            "correct": true
+          },
+          {
+            "text": "En lisant les Écritures chaque jour",
+            "correct": false
+          },
+          {
+            "text": "En allant à l'université",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "À quoi sert l'École des prophètes selon D&A 88 ?",
+        "answers": [
+          {
+            "text": "À instruire dans toutes les choses du royaume",
+            "correct": true
+          },
+          {
+            "text": "À apprendre les langues anciennes",
+            "correct": false
+          },
+          {
+            "text": "À former des dirigeants politiques",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour2": [
+      {
+        "question": "Que deviendra la terre pour entrer dans le royaume céleste ?",
+        "answers": [
+          {
+            "text": "Elle sera sanctifiée, mourra et ressuscitera",
+            "correct": true
+          },
+          {
+            "text": "Elle sera détruite et recréée",
+            "correct": false
+          },
+          {
+            "text": "Elle fusionnera avec le soleil",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel principe de la résurrection est enseigné dans D&A 88 ?",
+        "answers": [
+          {
+            "text": "Le corps que vous déposez ressuscitera",
+            "correct": true
+          },
+          {
+            "text": "Seuls les justes ressusciteront",
+            "correct": false
+          },
+          {
+            "text": "Nous recevrons un corps différent",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que nous commande D&A 88:124 ?",
+        "answers": [
+          {
+            "text": "De cesser d’être oisifs et impurs",
+            "correct": true
+          },
+          {
+            "text": "De construire un temple",
+            "correct": false
+          },
+          {
+            "text": "De nous organiser",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel est l’ordre de salutation de l’École des prophètes ?",
+        "answers": [
+          {
+            "text": "S’élever les mains et saluer au nom de Jésus-Christ",
+            "correct": true
+          },
+          {
+            "text": "Se serrer la main",
+            "correct": false
+          },
+          {
+            "text": "S’incliner en signe de respect",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour3": [
+      {
+        "question": "Selon D&A 88:12, que fait la lumière du Christ ?",
+        "answers": [
+          {
+            "text": "Elle remplit l’immensité de l’espace",
+            "correct": true
+          },
+          {
+            "text": "Elle éclaire seulement les justes",
+            "correct": false
+          },
+          {
+            "text": "Elle est identique au Saint-Esprit",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "D’après D&A 88:13, quel lien entre la lumière du Christ et la loi ?",
+        "answers": [
+          {
+            "text": "Elle est la loi qui gouverne toutes choses",
+            "correct": true
+          },
+          {
+            "text": "Elle remplace toute loi",
+            "correct": false
+          },
+          {
+            "text": "Elle ne concerne que les mondes célestes",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que « vivifie » la lumière du Christ (D&A 88) ?",
+        "answers": [
+          {
+            "text": "Toutes choses (vie, compréhension, puissance)",
+            "correct": true
+          },
+          {
+            "text": "Uniquement les prophètes",
+            "correct": false
+          },
+          {
+            "text": "Seulement la matière inorganique",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Laquelle décrit le mieux la « lumière du Christ » ?",
+        "answers": [
+          {
+            "text": "Une influence qui éclaire tout homme",
+            "correct": true
+          },
+          {
+            "text": "Un don réservé aux baptisés",
+            "correct": false
+          },
+          {
+            "text": "Le même être que le Saint-Esprit",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour4": [
+      {
+        "question": "Pourquoi établir l’École des prophètes (D&A 88) ?",
+        "answers": [
+          {
+            "text": "Pour instruire dans les choses du royaume",
+            "correct": true
+          },
+          {
+            "text": "Pour organiser des débats politiques",
+            "correct": false
+          },
+          {
+            "text": "Pour former des marchands",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quelle préparation est requise pour ceux qui s’y réunissent ?",
+        "answers": [
+          {
+            "text": "Se sanctifier et s’unir dans la prière",
+            "correct": true
+          },
+          {
+            "text": "Jeûner 40 jours systématiquement",
+            "correct": false
+          },
+          {
+            "text": "Apprendre uniquement l’hébreu",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel est l’ordre de salutation prescrit (D&A 88) ?",
+        "answers": [
+          {
+            "text": "Saluer au nom de Jésus-Christ",
+            "correct": true
+          },
+          {
+            "text": "S’incliner trois fois",
+            "correct": false
+          },
+          {
+            "text": "Se serrer la main sans parole",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que doivent-ils établir selon D&A 88 ?",
+        "answers": [
+          {
+            "text": "Une maison de prière, de jeûne, de foi et d’instruction",
+            "correct": true
+          },
+          {
+            "text": "Une armée de défense",
+            "correct": false
+          },
+          {
+            "text": "Un tribunal ecclésiastique permanent",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour5": [
+      {
+        "question": "Que commande D&A 88:124 ?",
+        "answers": [
+          {
+            "text": "Cesser d’être oisifs et impurs",
+            "correct": true
+          },
+          {
+            "text": "Éviter toute étude séculière",
+            "correct": false
+          },
+          {
+            "text": "Jeûner chaque jour",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 88:124, quel rythme de vie encouragé ?",
+        "answers": [
+          {
+            "text": "Se coucher tôt et se lever tôt",
+            "correct": true
+          },
+          {
+            "text": "Veiller tard pour étudier",
+            "correct": false
+          },
+          {
+            "text": "Dormir le moins possible",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel principe d’apprentissage D&A 88:118 enseigne-t-il ?",
+        "answers": [
+          {
+            "text": "Chercher la connaissance par l’étude et aussi par la foi",
+            "correct": true
+          },
+          {
+            "text": "Compter seulement sur des révélations",
+            "correct": false
+          },
+          {
+            "text": "S’appuyer uniquement sur l’autorité des anciens",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 88:125, quel « lien de la perfection » revêtir ?",
+        "answers": [
+          {
+            "text": "La charité",
+            "correct": true
+          },
+          {
+            "text": "La prudence financière",
+            "correct": false
+          },
+          {
+            "text": "La popularité",
+            "correct": false
+          }
+        ]
+      }
+    ]
+  },
+  "18–24 août | D&A 89–92": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "25–31 août | D&A 93": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "1–7 septembre | D&A 94–97": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "8–14 septembre | D&A 98–101": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "15–21 septembre | D&A 102–105": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "22–28 septembre | D&A 106–108": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "29 sept.–5 oct. | D&A 109–110": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "6–12 octobre | D&A 111–114": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "13–19 octobre | D&A 115–120": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "20–26 octobre | D&A 121–123": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "27 oct.–2 nov. | D&A 124": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "3–9 novembre | D&A 125–128": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "10–16 novembre | D&A 129–132": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "17–23 novembre | D&A 133–134": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "24–30 novembre | D&A 135–136": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "1–7 décembre | D&A 137–138": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "8–14 décembre | Noël": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "15–21 décembre | Révision": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  },
+  "22–28 décembre | Révision": {
+    "jour1": [],
+    "jour2": [],
+    "jour3": [],
+    "jour4": [],
+    "jour5": []
+  }
 }
-
