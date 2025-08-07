@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Viens et suis-moi</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 1rem 0; }
+        #app-container { background-color: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 90%; max-width: 600px; text-align: center; }
+        .selector-container { margin-bottom: 1.5rem; text-align: left; }
+        .selector-container label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
+        select { width: 100%; padding: 0.5rem; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; }
+        #quiz-area.hidden { display: none; }
+        #question { font-size: 1.2rem; margin: 1.5rem 0; min-height: 50px; }
+        .answer-btn { display: block; width: 100%; padding: 1rem; margin-bottom: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; cursor: pointer; transition: background-color 0.3s; }
+        .answer-btn:hover:not(:disabled) { background-color: #e0e0e0; }
+        .correct { background-color: #d4edda !important; border-color: #c3e6cb; }
+        .incorrect { background-color: #f8d7da !important; border-color: #f5c6cb; }
+        .answer-btn:disabled { cursor: default; }
+        #feedback { margin-top: 1rem; font-weight: bold; min-height: 24px; }
+        #next-btn { padding: 0.8rem 1.5rem; font-size: 1rem; border: none; border-radius: 5px; background-color: #007bff; color: white; cursor: pointer; margin-top: 1.5rem; display: none; }
+    </style>
+</head>
+<body>
+    <div id="app-container">
+        <!-- Selecteurs de semaine et de jour -->
+        <div class="selector-container">
+            <label for="week-selector">Choisissez une semaine d'étude :</label>
+            <select id="week-selector"></select>
+        </div>
+        <div class="selector-container">
+            <label for="day-selector">Choisissez un jour :</label>
+            <select id="day-selector"></select>
+        </div>
+        
+        <hr>
+
+        <!-- La zone du quiz, cachée au début -->
+        <div id="quiz-area">
+            <div id="question">Veuillez sélectionner une semaine et un jour pour commencer.</div>
+            <div id="answer-buttons"></div>
+            <div id="feedback"></div>
+            <button id="next-btn">Question suivante</button>
+        </div>
+    </div>
+
+    <script>
+        // Éléments de la page
+        const weekSelector = document.getElementById('week-selector');
+        const daySelector = document.getElementById('day-selector');
+        const quizArea = document.getElementById('quiz-area');
+        const questionElement = document.getElementById('question');
+        const answerButtonsElement = document.getElementById('answer-buttons');
+        const feedbackElement = document.getElementById('feedback');
+        const nextButton = document.getElementById('next-btn');
+
+        let allData = {}; // Pour stocker les questions chargées
+        let currentQuestions = [];
+        let availableQuestions = [];
+        let currentQuestionIndex;
+
+        // --- NOUVEAU : Chargement des questions depuis le fichier JSON ---
+        async function loadQuestions() {
+            try {
+                const response = await fetch('questions.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                allData = await response.json();
+                populateWeekSelector();
+                // Initialiser l'état après le chargement
+                handleWeekChange();
+            } catch (error) {
+                console.error("Erreur lors du chargement du fichier de questions:", error);
+                questionElement.innerText = "Impossible de charger les questions. Vérifiez que le fichier 'questions.json' existe et est correct.";
+            }
+        }
+
+        function populateWeekSelector() {
+            Object.keys(allData).forEach(week => {
+                const option = document.createElement('option');
+                option.value = week;
+                option.innerText = week;
+                weekSelector.appendChild(option);
+            });
+        }
+        
+        function populateDaySelector(weekData) {
+            daySelector.innerHTML = ''; // Vider les anciennes options
+            Object.keys(weekData).forEach(day => {
+                // N'ajoute le jour que s'il y a des questions dedans
+                if (weekData[day].length > 0) {
+                    const option = document.createElement('option');
+                    option.value = day;
+                    // Mettre une majuscule au jour pour l'affichage
+                    option.innerText = day.charAt(0).toUpperCase() + day.slice(1); 
+                    daySelector.appendChild(option);
+                }
+            });
+        }
+
+        function handleWeekChange() {
+            const selectedWeek = weekSelector.value;
+            const weekData = allData[selectedWeek];
+            populateDaySelector(weekData);
+            handleDayChange(); // Mettre à jour le quiz avec le premier jour disponible
+        }
+        
+        function handleDayChange() {
+            const selectedWeek = weekSelector.value;
+            const selectedDay = daySelector.value;
+            if (selectedWeek && selectedDay && allData[selectedWeek][selectedDay]) {
+                currentQuestions = allData[selectedWeek][selectedDay];
+                startQuiz();
+            } else {
+                quizArea.style.display = 'none';
+            }
+        }
+
+        function startQuiz() {
+            if (currentQuestions.length === 0) {
+                quizArea.style.display = 'block';
+                questionElement.innerText = "Il n'y a pas de questions pour cette sélection.";
+                answerButtonsElement.innerHTML = '';
+                feedbackElement.innerText = '';
+                nextButton.style.display = 'none';
+                return;
+            }
+            quizArea.style.display = 'block';
+            availableQuestions = [...currentQuestions];
+            feedbackElement.innerText = '';
+            nextButton.innerText = "Question suivante";
+            showNextQuestion();
+        }
+
+        function showNextQuestion() {
+            if (availableQuestions.length === 0) {
+                questionElement.innerText = "Quiz du jour terminé !";
+                answerButtonsElement.innerHTML = '';
+                nextButton.innerText = "Recommencer";
+                nextButton.onclick = startQuiz;
+                nextButton.style.display = 'block';
+            } else {
+                nextButton.onclick = showNextQuestion;
+                currentQuestionIndex = Math.floor(Math.random() * availableQuestions.length);
+                showQuestion(availableQuestions[currentQuestionIndex]);
+            }
+        }
+        
+        function showQuestion(question) {
+            questionElement.innerText = question.question;
+            answerButtonsElement.innerHTML = '';
+            feedbackElement.innerText = '';
+            nextButton.style.display = 'none';
+
+            question.answers.forEach(answer => {
+                const button = document.createElement('button');
+                button.innerText = answer.text;
+                button.classList.add('answer-btn');
+                if (answer.correct) button.dataset.correct = "true";
+                button.addEventListener('click', selectAnswer);
+                answerButtonsElement.appendChild(button);
+            });
+        }
+
+        function selectAnswer(e) {
+            const selectedButton = e.target;
+            const correct = selectedButton.dataset.correct === "true";
+
+            feedbackElement.innerText = correct ? "Bonne réponse !" : "Mauvaise réponse.";
+            feedbackElement.style.color = correct ? 'green' : 'red';
+
+            Array.from(answerButtonsElement.children).forEach(button => {
+                if (button.dataset.correct) button.classList.add('correct');
+                button.disabled = true;
+            });
+            if (!correct) selectedButton.classList.add('incorrect');
+            
+            availableQuestions.splice(currentQuestionIndex, 1);
+            nextButton.style.display = 'block';
+        }
+
+        // --- Démarrage de l'application ---
+        weekSelector.addEventListener('change', handleWeekChange);
+        daySelector.addEventListener('change', handleDayChange);
+        nextButton.addEventListener('click', showNextQuestion);
+        
+        // Charger les données au lancement
+        loadQuestions();
+
+    </script>
+</body>
+</html>
