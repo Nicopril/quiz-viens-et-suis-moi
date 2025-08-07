@@ -4,25 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz - Viens et suis-moi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 1rem 0; }
-        #app-container { background-color: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 90%; max-width: 600px; text-align: center; }
-        .selector-container { margin-bottom: 1.5rem; text-align: left; }
-        .selector-container label { display: block; margin-bottom: 0.5rem; font-weight: bold; }
-        select { width: 100%; padding: 0.5rem; font-size: 1rem; border-radius: 5px; border: 1px solid #ccc; }
+        /* --- NOUVEAU STYLE AMÉLIORÉ --- */
+        :root {
+            --primary-color: #005A94; /* Bleu institutionnel */
+            --secondary-color: #F0F2F5;
+            --text-color: #333;
+            --light-text-color: #fff;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --font-body: 'Lato', sans-serif;
+            --font-title: 'Merriweather', serif;
+        }
+
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--secondary-color); 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            padding: 1.5rem;
+            box-sizing: border-box;
+        }
+
+        #app-container { 
+            background-color: white; 
+            padding: 2.5rem; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+            width: 100%; 
+            max-width: 700px; 
+            text-align: center; 
+        }
+
+        /* Message d'accueil et citation */
+        #welcome-message {
+            text-align: left;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        #welcome-message h1 {
+            font-family: var(--font-title);
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        #welcome-message p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        #quote {
+            font-style: italic;
+            color: #555;
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--primary-color);
+        }
+        #quote footer {
+            font-style: normal;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 0.5rem;
+        }
+
+        .selector-container { 
+            margin-bottom: 1.5rem; 
+            text-align: left; 
+        }
+        .selector-container label { 
+            display: block; 
+            margin-bottom: 0.5rem; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+        select { 
+            width: 100%; 
+            padding: 0.8rem; 
+            font-size: 1rem; 
+            border-radius: 8px; 
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        #quiz-area { 
+            margin-top: 2rem;
+        }
         #quiz-area.hidden { display: none; }
-        #question { font-size: 1.2rem; margin: 1.5rem 0; min-height: 50px; }
-        .answer-btn { display: block; width: 100%; padding: 1rem; margin-bottom: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; cursor: pointer; transition: background-color 0.3s; }
-        .answer-btn:hover:not(:disabled) { background-color: #e0e0e0; }
-        .correct { background-color: #d4edda !important; border-color: #c3e6cb; }
-        .incorrect { background-color: #f8d7da !important; border-color: #f5c6cb; }
+
+        #question { 
+            font-family: var(--font-title);
+            font-size: 1.4rem; 
+            margin: 1.5rem 0; 
+            min-height: 50px; 
+            color: var(--text-color);
+        }
+        .answer-btn { 
+            display: block; 
+            width: 100%; 
+            padding: 1rem; 
+            margin-bottom: 0.8rem; 
+            font-size: 1.1rem; 
+            border: 2px solid #ccc; 
+            border-radius: 8px; 
+            background-color: #f9f9f9; 
+            cursor: pointer; 
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        .answer-btn:hover:not(:disabled) { 
+            background-color: #e9ecef;
+            border-color: var(--primary-color);
+        }
+        .correct { 
+            background-color: #e9f7ef !important; 
+            border-color: var(--success-color) !important;
+            color: #1d643b;
+            font-weight: bold;
+        }
+        .incorrect { 
+            background-color: #fdeeee !important; 
+            border-color: var(--danger-color) !important; 
+            color: #842029;
+            font-weight: bold;
+        }
         .answer-btn:disabled { cursor: default; }
-        #feedback { margin-top: 1rem; font-weight: bold; min-height: 24px; }
-        #next-btn { padding: 0.8rem 1.5rem; font-size: 1rem; border: none; border-radius: 5px; background-color: #007bff; color: white; cursor: pointer; margin-top: 1.5rem; display: none; }
+
+        #feedback { 
+            margin-top: 1rem; 
+            font-weight: bold; 
+            min-height: 24px;
+            font-size: 1.2rem;
+        }
+
+        #next-btn { 
+            padding: 1rem 2rem; 
+            font-size: 1.1rem; 
+            border: none; 
+            border-radius: 8px; 
+            background-color: var(--primary-color); 
+            color: var(--light-text-color); 
+            cursor: pointer; 
+            margin-top: 1.5rem; 
+            display: none; 
+            transition: background-color 0.3s;
+        }
+        #next-btn:hover {
+            background-color: #004a7c;
+        }
     </style>
 </head>
 <body>
     <div id="app-container">
+        <!-- NOUVEAU: Message d'accueil et citation -->
+        <div id="welcome-message">
+            <h1>Bienvenue au Quiz "Viens et suis-moi" !</h1>
+            <p>
+                Ce quiz est conçu pour compléter votre étude personnelle et familiale des Écritures. 
+                Utilisez-le comme un outil pour réviser les principes que vous avez étudiés durant la semaine et pour approfondir votre compréhension de l'Évangile.
+            </p>
+            <blockquote id="quote">
+                <p>"Je vous promets que si vous vous faites les délices des paroles du Christ chaque jour, mois après mois, les paroles du Christ vous diront tout ce que vous devez faire."</p>
+                <footer>- Russell M. Nelson</footer>
+            </blockquote>
+        </div>
+
         <!-- Selecteurs de semaine et de jour -->
         <div class="selector-container">
             <label for="week-selector">Choisissez une semaine d'étude :</label>
@@ -33,9 +186,7 @@
             <select id="day-selector"></select>
         </div>
         
-        <hr>
-
-        <!-- La zone du quiz, cachée au début -->
+        <!-- La zone du quiz reste inchangée dans sa logique -->
         <div id="quiz-area">
             <div id="question">Veuillez sélectionner une semaine et un jour pour commencer.</div>
             <div id="answer-buttons"></div>
@@ -45,7 +196,8 @@
     </div>
 
     <script>
-        // Éléments de la page
+        // Le code JavaScript reste exactement le même, aucune modification n'est nécessaire ici.
+        // ... collez ici tout le contenu de votre balise <script> existante ...
         const weekSelector = document.getElementById('week-selector');
         const daySelector = document.getElementById('day-selector');
         const quizArea = document.getElementById('quiz-area');
@@ -59,7 +211,6 @@
         let availableQuestions = [];
         let currentQuestionIndex;
 
-        // --- NOUVEAU : Chargement des questions depuis le fichier JSON ---
         async function loadQuestions() {
             try {
                 const response = await fetch('questions.json');
@@ -68,7 +219,6 @@
                 }
                 allData = await response.json();
                 populateWeekSelector();
-                // Initialiser l'état après le chargement
                 handleWeekChange();
             } catch (error) {
                 console.error("Erreur lors du chargement du fichier de questions:", error);
@@ -88,11 +238,9 @@
         function populateDaySelector(weekData) {
             daySelector.innerHTML = ''; // Vider les anciennes options
             Object.keys(weekData).forEach(day => {
-                // N'ajoute le jour que s'il y a des questions dedans
                 if (weekData[day].length > 0) {
                     const option = document.createElement('option');
                     option.value = day;
-                    // Mettre une majuscule au jour pour l'affichage
                     option.innerText = day.charAt(0).toUpperCase() + day.slice(1); 
                     daySelector.appendChild(option);
                 }
@@ -102,92 +250,8 @@
         function handleWeekChange() {
             const selectedWeek = weekSelector.value;
             const weekData = allData[selectedWeek];
-            populateDaySelector(weekData);
-            handleDayChange(); // Mettre à jour le quiz avec le premier jour disponible
-        }
+            populateDay
+
+                 
         
-        function handleDayChange() {
-            const selectedWeek = weekSelector.value;
-            const selectedDay = daySelector.value;
-            if (selectedWeek && selectedDay && allData[selectedWeek][selectedDay]) {
-                currentQuestions = allData[selectedWeek][selectedDay];
-                startQuiz();
-            } else {
-                quizArea.style.display = 'none';
-            }
-        }
-
-        function startQuiz() {
-            if (currentQuestions.length === 0) {
-                quizArea.style.display = 'block';
-                questionElement.innerText = "Il n'y a pas de questions pour cette sélection.";
-                answerButtonsElement.innerHTML = '';
-                feedbackElement.innerText = '';
-                nextButton.style.display = 'none';
-                return;
-            }
-            quizArea.style.display = 'block';
-            availableQuestions = [...currentQuestions];
-            feedbackElement.innerText = '';
-            nextButton.innerText = "Question suivante";
-            showNextQuestion();
-        }
-
-        function showNextQuestion() {
-            if (availableQuestions.length === 0) {
-                questionElement.innerText = "Quiz du jour terminé !";
-                answerButtonsElement.innerHTML = '';
-                nextButton.innerText = "Recommencer";
-                nextButton.onclick = startQuiz;
-                nextButton.style.display = 'block';
-            } else {
-                nextButton.onclick = showNextQuestion;
-                currentQuestionIndex = Math.floor(Math.random() * availableQuestions.length);
-                showQuestion(availableQuestions[currentQuestionIndex]);
-            }
-        }
-        
-        function showQuestion(question) {
-            questionElement.innerText = question.question;
-            answerButtonsElement.innerHTML = '';
-            feedbackElement.innerText = '';
-            nextButton.style.display = 'none';
-
-            question.answers.forEach(answer => {
-                const button = document.createElement('button');
-                button.innerText = answer.text;
-                button.classList.add('answer-btn');
-                if (answer.correct) button.dataset.correct = "true";
-                button.addEventListener('click', selectAnswer);
-                answerButtonsElement.appendChild(button);
-            });
-        }
-
-        function selectAnswer(e) {
-            const selectedButton = e.target;
-            const correct = selectedButton.dataset.correct === "true";
-
-            feedbackElement.innerText = correct ? "Bonne réponse !" : "Mauvaise réponse.";
-            feedbackElement.style.color = correct ? 'green' : 'red';
-
-            Array.from(answerButtonsElement.children).forEach(button => {
-                if (button.dataset.correct) button.classList.add('correct');
-                button.disabled = true;
-            });
-            if (!correct) selectedButton.classList.add('incorrect');
-            
-            availableQuestions.splice(currentQuestionIndex, 1);
-            nextButton.style.display = 'block';
-        }
-
-        // --- Démarrage de l'application ---
-        weekSelector.addEventListener('change', handleWeekChange);
-        daySelector.addEventListener('change', handleDayChange);
-        nextButton.addEventListener('click', showNextQuestion);
-        
-        // Charger les données au lancement
-        loadQuestions();
-
-    </script>
-</body>
-</html>
+     
