@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* --- NOUVEAU STYLE AMÉLIORÉ --- */
         :root {
             --primary-color: #005A94; /* Bleu institutionnel */
             --secondary-color: #F0F2F5;
@@ -19,7 +18,6 @@
             --font-body: 'Lato', sans-serif;
             --font-title: 'Merriweather', serif;
         }
-
         body { 
             font-family: var(--font-body); 
             background-color: var(--secondary-color); 
@@ -31,7 +29,6 @@
             padding: 1.5rem;
             box-sizing: border-box;
         }
-
         #app-container { 
             background-color: white; 
             padding: 2.5rem; 
@@ -41,8 +38,6 @@
             max-width: 700px; 
             text-align: center; 
         }
-
-        /* Message d'accueil et citation */
         #welcome-message {
             text-align: left;
             margin-bottom: 2rem;
@@ -73,7 +68,6 @@
             text-align: right;
             margin-top: 0.5rem;
         }
-
         .selector-container { 
             margin-bottom: 1.5rem; 
             text-align: left; 
@@ -93,12 +87,10 @@
             border: 1px solid #ccc;
             background-color: #fff;
         }
-
         #quiz-area { 
             margin-top: 2rem;
         }
         #quiz-area.hidden { display: none; }
-
         #question { 
             font-family: var(--font-title);
             font-size: 1.4rem; 
@@ -136,14 +128,12 @@
             font-weight: bold;
         }
         .answer-btn:disabled { cursor: default; }
-
         #feedback { 
             margin-top: 1rem; 
             font-weight: bold; 
             min-height: 24px;
             font-size: 1.2rem;
         }
-
         #next-btn { 
             padding: 1rem 2rem; 
             font-size: 1.1rem; 
@@ -163,7 +153,7 @@
 </head>
 <body>
     <div id="app-container">
-        <!-- NOUVEAU: Message d'accueil et citation -->
+        <!-- Message d'accueil et citation -->
         <div id="welcome-message">
             <h1>Bienvenue au Quiz "Viens et suis-moi" !</h1>
             <p>
@@ -186,7 +176,7 @@
             <select id="day-selector"></select>
         </div>
         
-        <!-- La zone du quiz reste inchangée dans sa logique -->
+        <!-- La zone du quiz -->
         <div id="quiz-area">
             <div id="question">Veuillez sélectionner une semaine et un jour pour commencer.</div>
             <div id="answer-buttons"></div>
@@ -196,8 +186,7 @@
     </div>
 
     <script>
-        // Le code JavaScript reste exactement le même, aucune modification n'est nécessaire ici.
-        // ... collez ici tout le contenu de votre balise <script> existante ...
+        // --- DÉBUT DU CODE JAVASCRIPT COMPLET ET CORRIGÉ ---
         const weekSelector = document.getElementById('week-selector');
         const daySelector = document.getElementById('day-selector');
         const quizArea = document.getElementById('quiz-area');
@@ -206,7 +195,7 @@
         const feedbackElement = document.getElementById('feedback');
         const nextButton = document.getElementById('next-btn');
 
-        let allData = {}; // Pour stocker les questions chargées
+        let allData = {};
         let currentQuestions = [];
         let availableQuestions = [];
         let currentQuestionIndex;
@@ -236,7 +225,7 @@
         }
         
         function populateDaySelector(weekData) {
-            daySelector.innerHTML = ''; // Vider les anciennes options
+            daySelector.innerHTML = '';
             Object.keys(weekData).forEach(day => {
                 if (weekData[day].length > 0) {
                     const option = document.createElement('option');
@@ -250,7 +239,65 @@
         function handleWeekChange() {
             const selectedWeek = weekSelector.value;
             const weekData = allData[selectedWeek];
-            populateDay
+            populateDaySelector(weekData);
+            handleDayChange();
+        }
+        
+        function handleDayChange() {
+            const selectedWeek = weekSelector.value;
+            const selectedDay = daySelector.value;
+            if (selectedWeek && selectedDay && allData[selectedWeek][selectedDay]) {
+                currentQuestions = allData[selectedWeek][selectedDay];
+                startQuiz();
+            } else {
+                quizArea.style.display = 'none';
+            }
+        }
+
+        function startQuiz() {
+            if (currentQuestions.length === 0) {
+                quizArea.style.display = 'block';
+                questionElement.innerText = "Il n'y a pas de questions pour cette sélection.";
+                answerButtonsElement.innerHTML = '';
+                feedbackElement.innerText = '';
+                nextButton.style.display = 'none';
+                return;
+            }
+            quizArea.style.display = 'block';
+            availableQuestions = [...currentQuestions];
+            feedbackElement.innerText = '';
+            nextButton.innerText = "Question suivante";
+            showNextQuestion();
+        }
+
+        function showNextQuestion() {
+            if (availableQuestions.length === 0) {
+                questionElement.innerText = "Quiz du jour terminé !";
+                answerButtonsElement.innerHTML = '';
+                nextButton.innerText = "Recommencer";
+                nextButton.onclick = startQuiz;
+                nextButton.style.display = 'block';
+            } else {
+                nextButton.onclick = showNextQuestion;
+                currentQuestionIndex = Math.floor(Math.random() * availableQuestions.length);
+                showQuestion(availableQuestions[currentQuestionIndex]);
+            }
+        }
+        
+        function showQuestion(question) {
+            questionElement.innerText = question.question;
+            answerButtonsElement.innerHTML = '';
+            feedbackElement.innerText = '';
+            nextButton.style.display = 'none';
+
+            question.answers.forEach(answer => {
+                const button = document.createElement('button');
+                button.innerText = answer.text;
+                button.classList.add('answer-btn');
+                if (answer.correct) button.dataset.correct = "true";
+                button.addEventListener('click', selectAnswer);
+                answerButtonsElement.appendChild(button);
+            });
 
                  
         
