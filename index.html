@@ -145,6 +145,26 @@
       font-weight: bold;
       font-size: 1.1rem;
     }
+    #score {
+      margin-top: 1rem;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    /* Nouvelle classe pour l'animation de fin */
+    #end-message {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      opacity: 0;
+      animation: fadeInPulse 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeInPulse {
+      0% { opacity: 0; transform: scale(0.95); }
+      50% { opacity: 1; transform: scale(1.05); }
+      100% { opacity: 1; transform: scale(1); }
+    }
   </style>
 </head>
 <body>
@@ -173,6 +193,7 @@
       <div id="question"></div>
       <div id="answer-buttons"></div>
       <div id="feedback"></div>
+      <p id="score">Score : 0</p>
       <button id="next-btn">Question suivante</button>
     </div>
   </div>
@@ -185,11 +206,13 @@
     const answerButtonsElement = document.getElementById('answer-buttons');
     const feedbackElement = document.getElementById('feedback');
     const nextButton = document.getElementById('next-btn');
+    const scoreElement = document.getElementById('score');
 
     let allData = {};
     let currentQuestions = [];
     let availableQuestions = [];
     let currentQuestionIndex;
+    let score = 0;
 
     async function loadQuestions() {
       try {
@@ -251,7 +274,6 @@
       }
     }
 
-    // Nouvelle fonction : Mélanger un tableau (Fisher–Yates)
     function shuffle(array) {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -274,6 +296,8 @@
       availableQuestions = [...currentQuestions];
       feedbackElement.innerText = '';
       nextButton.innerText = "Question suivante";
+      score = 0;
+      scoreElement.innerText = 'Score : ' + score;
       showNextQuestion();
     }
 
@@ -284,6 +308,13 @@
         nextButton.innerText = "Recommencer";
         nextButton.onclick = startQuiz;
         nextButton.style.display = 'block';
+
+        // Ajout du message animé "À demain"
+        const endMessage = document.createElement('p');
+        endMessage.id = 'end-message';
+        endMessage.innerText = 'À demain pour de nouvelles découvertes !';
+        quizArea.appendChild(endMessage);  // Ajoute le message animé
+
       } else {
         nextButton.onclick = showNextQuestion;
         currentQuestionIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -297,7 +328,6 @@
       feedbackElement.innerText = '';
       nextButton.style.display = 'none';
 
-      // Mélanger l'ordre des réponses
       const shuffledAnswers = shuffle([...question.answers]);
 
       shuffledAnswers.forEach(answer => {
@@ -326,6 +356,11 @@
       feedbackElement.innerText = correct ? "Bonne réponse !" : "Mauvaise réponse.";
       nextButton.style.display = 'block';
 
+      if (correct) {
+        score++;
+        scoreElement.innerText = 'Score : ' + score;
+      }
+
       availableQuestions.splice(currentQuestionIndex, 1);
     }
 
@@ -335,5 +370,4 @@
   </script>
 </body>
 </html>
-
 
