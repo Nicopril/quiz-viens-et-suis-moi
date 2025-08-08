@@ -379,12 +379,20 @@
     }
 
     function handleWeekChange() {
+      // Supprime le message de fin s'il existe
+      const oldEndMsg = document.getElementById('end-message');
+      if (oldEndMsg) oldEndMsg.remove();
+
       const selectedWeek = weekSelector.value;
       const weekData = allData[selectedWeek];
       populateDaySelector(weekData);
     }
 
     function handleDayChange() {
+      // Supprime le message de fin s'il existe
+      const oldEndMsg = document.getElementById('end-message');
+      if (oldEndMsg) oldEndMsg.remove();
+
       const selectedWeek = weekSelector.value;
       const selectedDay = daySelector.value;
 
@@ -431,10 +439,11 @@
         nextButton.onclick = startQuiz;
         nextButton.style.display = 'block';
 
-        // Ajout du message animé "À demain"
+        // Ajout du message animé avec le score final
         const endMessage = document.createElement('p');
         endMessage.id = 'end-message';
-        endMessage.innerText = 'À demain pour de nouvelles découvertes !';
+        const totalQuestions = currentQuestions.length;
+        endMessage.innerHTML = `Vous avez obtenu <strong>${score} bonne${score > 1 ? 's' : ''} réponse${score > 1 ? 's' : ''}</strong> sur ${totalQuestions}<br/>À demain pour de nouvelles découvertes !`;
         quizArea.appendChild(endMessage);
 
       } else {
