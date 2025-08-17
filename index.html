@@ -520,7 +520,7 @@
       // Supprime le message de fin s'il existe
       const oldEndMsg = document.getElementById('end-message');
       if (oldEndMsg) oldEndMsg.remove();
-      const oldStudyLinks = document.getElementById('study-links');
+      const oldStudyLinks = document.querySelector('.study-links');
       if (oldStudyLinks) oldStudyLinks.remove();
 
       const selectedWeek = weekSelector.value;
@@ -532,7 +532,7 @@
       // Supprime le message de fin s'il existe
       const oldEndMsg = document.getElementById('end-message');
       if (oldEndMsg) oldEndMsg.remove();
-      const oldStudyLinks = document.getElementById('study-links');
+      const oldStudyLinks = document.querySelector('.study-links');
       if (oldStudyLinks) oldStudyLinks.remove();
 
       const selectedWeek = weekSelector.value;
@@ -598,145 +598,4 @@
         } else if (score >= totalQuestions / 2) {
           encouragement = "💪 Bon travail, continuez vos efforts ! 💪";
         } else {
-          encouragement = "📖 Prenez le temps de relire cette semaine. 📖";
-        }
-
-        endMessage.innerHTML = `Vous avez obtenu <strong>${score} bonne${score > 1 ? 's' : ''} réponse${score > 1 ? 's' : ''}</strong> sur ${totalQuestions}.<br/><br/>${encouragement}<br/><br/>À demain pour de nouvelles découvertes !`;
-        quizArea.appendChild(endMessage);
-
-        // Ajout des liens d'approfondissement
-        const studyLinks = document.createElement('div');
-        studyLinks.id = 'study-links';
-        studyLinks.className = 'study-links';
-        studyLinks.innerHTML = `
-          <h4>📚 Pour approfondir votre étude :</h4>
-          <a href="https://www.youtube.com/@ecouteetpreteloreille4331" target="_blank" class="study-link youtube">
-            🎥 Chaîne YouTube d'approfondissement
-          </a>
-          <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025?lang=fra" target="_blank" class="study-link">
-            📖 Manuel "Viens et suis-moi" 2025
-          </a>
-        `;
-        quizArea.appendChild(studyLinks);
-
-      } else {
-        nextButton.onclick = showNextQuestion;
-        nextButton.style.display = 'none';
-        shareButtons.style.display = 'none';
-        currentQuestionIndex = Math.floor(Math.random() * availableQuestions.length);
-        showQuestion(availableQuestions[currentQuestionIndex]);
-      }
-    }
-
-    function showQuestion(question) {
-      questionElement.innerText = question.question;
-      answerButtonsElement.innerHTML = '';
-      feedbackElement.innerText = '';
-      nextButton.style.display = 'none';
-      shareButtons.style.display = 'none';
-
-      const shuffledAnswers = shuffle([...question.answers]);
-
-      shuffledAnswers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('answer-btn');
-        if (answer.correct) button.dataset.correct = "true";
-        button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
-      });
-    }
-
-    function selectAnswer(e) {
-      const selectedButton = e.target;
-      const correct = selectedButton.dataset.correct === "true";
-
-      Array.from(answerButtonsElement.children).forEach(button => {
-        button.disabled = true;
-        if (button.dataset.correct === "true") {
-          button.classList.add('correct');
-        } else {
-          button.classList.add('incorrect');
-        }
-      });
-
-      feedbackElement.innerText = correct ? "Bonne réponse !" : "Mauvaise réponse.";
-      nextButton.style.display = 'block';
-
-      if (correct) {
-        score++;
-        scoreElement.innerText = 'Score : ' + score;
-      }
-
-      availableQuestions.splice(currentQuestionIndex, 1);
-    }
-
-    // Génère le texte de partage
-    function generateShareText() {
-      const selectedWeek = weekSelector.value;
-      const selectedDay = daySelector.value;
-      const totalQuestions = currentQuestions.length;
-      
-      let shareText = `🎯 Quiz "Viens et suis-moi" terminé !\n\n`;
-      shareText += `📖 ${selectedWeek} - ${selectedDay.charAt(0).toUpperCase() + selectedDay.slice(1)}\n`;
-      shareText += `✅ Score: ${score}/${totalQuestions}\n\n`;
-      
-      if (score === totalQuestions) {
-        shareText += `🎉 Score parfait ! Je maîtrise cette semaine !\n\n`;
-      } else if (score >= totalQuestions - 1) {
-        shareText += `👏 Presque parfait ! Très bon résultat !\n\n`;
-      } else if (score >= totalQuestions / 2) {
-        shareText += `💪 Bon travail ! Je continue mes efforts !\n\n`;
-      } else {
-        shareText += `📚 En progression dans mon étude !\n\n`;
-      }
-      
-      shareText += `Rejoignez-moi dans l'étude de Doctrine et Alliances !\n\n`;
-      shareText += `🎥 Approfondissement: https://www.youtube.com/@ecouteetpreteloreille4331\n`;
-      shareText += `📖 Manuel officiel: https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025?lang=fra`;
-      return shareText;
-    }
-
-    // Boutons de partage spécifiques
-    document.getElementById('share-whatsapp').addEventListener('click', () => {
-      const text = generateShareText();
-      const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
-    });
-
-    document.getElementById('share-twitter').addEventListener('click', () => {
-      const text = generateShareText();
-      const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
-    });
-
-    document.getElementById('share-telegram').addEventListener('click', () => {
-      const text = generateShareText();
-      const url = `https://t.me/share/url?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
-    });
-
-    document.getElementById('share-copy').addEventListener('click', async () => {
-      const text = generateShareText();
-      try {
-        await navigator.clipboard.writeText(text);
-        const button = document.getElementById('share-copy');
-        const originalText = button.innerHTML;
-        button.innerHTML = '✅ Copié !';
-        button.style.backgroundColor = '#10B981';
-        setTimeout(() => {
-          button.innerHTML = originalText;
-          button.style.backgroundColor = '#6B7280';
-        }, 2000);
-      } catch (err) {
-        alert('Impossible de copier automatiquement. Veuillez sélectionner et copier le texte manuellement.');
-        prompt('Copiez ce texte:', text);
-      }
-    });
-
-    weekSelector.addEventListener('change', handleWeekChange);
-    daySelector.addEventListener('change', handleDayChange);
-    loadQuestions();
-  </script>
-</body>
-</html>
+          encouragement = "
