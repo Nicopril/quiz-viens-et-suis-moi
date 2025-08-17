@@ -140,6 +140,108 @@
       background-color: #004374;
     }
 
+    /* Styles pour les boutons de partage */
+    .share-buttons {
+      display: none;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .share-buttons h3 {
+      color: var(--primary-color);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .share-btn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .share-btn {
+      padding: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #fff;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .share-btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .share-whatsapp {
+      background-color: #25D366;
+    }
+
+    .share-twitter {
+      background-color: #1DA1F2;
+    }
+
+    .share-telegram {
+      background-color: #0088CC;
+    }
+
+    .share-copy {
+      background-color: #6B7280;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    /* Style pour les liens d'approfondissement */
+    .study-links {
+      background-color: rgba(216, 234, 251, 0.3);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .study-links h4 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .study-link {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--border-radius);
+      margin: 0.5rem;
+      font-weight: 600;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .study-link:hover {
+      background-color: #004374;
+      transform: translateY(-1px);
+    }
+
+    .study-link.youtube {
+      background-color: #FF0000;
+    }
+
+    .study-link.youtube:hover {
+      background-color: #CC0000;
+    }
+
     #feedback {
       margin-top: 1rem;
       font-weight: bold;
@@ -272,8 +374,12 @@
       #next-btn {
         font-size: 1.1rem;
         padding: 1rem 2rem;
-        margin: 2rem auto 0;
-        display: block;
+      }
+
+      .share-btn-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 600px;
+        margin: 0 auto 1rem auto;
       }
 
       #end-message {
@@ -316,7 +422,27 @@
       <div id="answer-buttons"></div>
       <div id="feedback"></div>
       <p id="score">Score : 0</p>
-      <button id="next-btn">Question suivante</button>
+      <div class="button-container">
+        <button id="next-btn">Question suivante</button>
+      </div>
+      
+      <div class="share-buttons" id="share-buttons">
+        <h3>📱 Partager mon résultat</h3>
+        <div class="share-btn-grid">
+          <button class="share-btn share-whatsapp" id="share-whatsapp">
+            💬 WhatsApp
+          </button>
+          <button class="share-btn share-twitter" id="share-twitter">
+            🐦 Twitter
+          </button>
+          <button class="share-btn share-telegram" id="share-telegram">
+            ✈️ Telegram
+          </button>
+          <button class="share-btn share-copy" id="share-copy">
+            📋 Copier
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -328,6 +454,7 @@
     const answerButtonsElement = document.getElementById('answer-buttons');
     const feedbackElement = document.getElementById('feedback');
     const nextButton = document.getElementById('next-btn');
+    const shareButtons = document.getElementById('share-buttons');
     const scoreElement = document.getElementById('score');
 
     let allData = {};
@@ -342,7 +469,18 @@
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         allData = await response.json();
         populateWeekSelector();
-        weekSelector.selectedIndex = 0;
+        
+        // Sélectionne automatiquement la semaine actuelle (18-24 août)
+        const currentWeek = "18–24 août | D&A 89–92";
+        const weekKeys = Object.keys(allData);
+        const currentWeekIndex = weekKeys.indexOf(currentWeek);
+        
+        if (currentWeekIndex !== -1) {
+          weekSelector.selectedIndex = currentWeekIndex;
+        } else {
+          weekSelector.selectedIndex = 0; // Si pas trouvé, prendre la première
+        }
+        
         handleWeekChange();
       } catch (error) {
         console.error("Erreur lors du chargement du fichier de questions:", error);
@@ -382,6 +520,8 @@
       // Supprime le message de fin s'il existe
       const oldEndMsg = document.getElementById('end-message');
       if (oldEndMsg) oldEndMsg.remove();
+      const oldStudyLinks = document.getElementById('study-links');
+      if (oldStudyLinks) oldStudyLinks.remove();
 
       const selectedWeek = weekSelector.value;
       const weekData = allData[selectedWeek];
@@ -392,6 +532,8 @@
       // Supprime le message de fin s'il existe
       const oldEndMsg = document.getElementById('end-message');
       if (oldEndMsg) oldEndMsg.remove();
+      const oldStudyLinks = document.getElementById('study-links');
+      if (oldStudyLinks) oldStudyLinks.remove();
 
       const selectedWeek = weekSelector.value;
       const selectedDay = daySelector.value;
@@ -419,6 +561,7 @@
         answerButtonsElement.innerHTML = '';
         feedbackElement.innerText = '';
         nextButton.style.display = 'none';
+        shareButtons.style.display = 'none';
         return;
       }
 
@@ -426,6 +569,8 @@
       availableQuestions = [...currentQuestions];
       feedbackElement.innerText = '';
       nextButton.innerText = "Question suivante";
+      nextButton.style.display = 'none';
+      shareButtons.style.display = 'none';
       score = 0;
       scoreElement.innerText = 'Score : ' + score;
       showNextQuestion();
@@ -438,16 +583,46 @@
         nextButton.innerText = "Recommencer";
         nextButton.onclick = startQuiz;
         nextButton.style.display = 'block';
+        shareButtons.style.display = 'block';
 
-        // Ajout du message animé avec le score final
+        // Message animé avec le score final et encouragements personnalisés
         const endMessage = document.createElement('p');
         endMessage.id = 'end-message';
         const totalQuestions = currentQuestions.length;
-        endMessage.innerHTML = `Vous avez obtenu <strong>${score} bonne${score > 1 ? 's' : ''} réponse${score > 1 ? 's' : ''}</strong> sur ${totalQuestions}<br/>À demain pour de nouvelles découvertes !`;
+        let encouragement = "";
+
+        if (score === totalQuestions) {
+          encouragement = "🎉 Parfait ! Vous maîtrisez cette semaine ! 🎉";
+        } else if (score >= totalQuestions - 1) {
+          encouragement = "👏 Très bien ! Presque parfait ! 👏";
+        } else if (score >= totalQuestions / 2) {
+          encouragement = "💪 Bon travail, continuez vos efforts ! 💪";
+        } else {
+          encouragement = "📖 Prenez le temps de relire cette semaine. 📖";
+        }
+
+        endMessage.innerHTML = `Vous avez obtenu <strong>${score} bonne${score > 1 ? 's' : ''} réponse${score > 1 ? 's' : ''}</strong> sur ${totalQuestions}.<br/><br/>${encouragement}<br/><br/>À demain pour de nouvelles découvertes !`;
         quizArea.appendChild(endMessage);
+
+        // Ajout des liens d'approfondissement
+        const studyLinks = document.createElement('div');
+        studyLinks.id = 'study-links';
+        studyLinks.className = 'study-links';
+        studyLinks.innerHTML = `
+          <h4>📚 Pour approfondir votre étude :</h4>
+          <a href="https://www.youtube.com/@ecouteetpreteloreille4331" target="_blank" class="study-link youtube">
+            🎥 Chaîne YouTube d'approfondissement
+          </a>
+          <a href="https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025?lang=fra" target="_blank" class="study-link">
+            📖 Manuel "Viens et suis-moi" 2025
+          </a>
+        `;
+        quizArea.appendChild(studyLinks);
 
       } else {
         nextButton.onclick = showNextQuestion;
+        nextButton.style.display = 'none';
+        shareButtons.style.display = 'none';
         currentQuestionIndex = Math.floor(Math.random() * availableQuestions.length);
         showQuestion(availableQuestions[currentQuestionIndex]);
       }
@@ -458,6 +633,7 @@
       answerButtonsElement.innerHTML = '';
       feedbackElement.innerText = '';
       nextButton.style.display = 'none';
+      shareButtons.style.display = 'none';
 
       const shuffledAnswers = shuffle([...question.answers]);
 
@@ -494,6 +670,69 @@
 
       availableQuestions.splice(currentQuestionIndex, 1);
     }
+
+    // Génère le texte de partage
+    function generateShareText() {
+      const selectedWeek = weekSelector.value;
+      const selectedDay = daySelector.value;
+      const totalQuestions = currentQuestions.length;
+      
+      let shareText = `🎯 Quiz "Viens et suis-moi" terminé !\n\n`;
+      shareText += `📖 ${selectedWeek} - ${selectedDay.charAt(0).toUpperCase() + selectedDay.slice(1)}\n`;
+      shareText += `✅ Score: ${score}/${totalQuestions}\n\n`;
+      
+      if (score === totalQuestions) {
+        shareText += `🎉 Score parfait ! Je maîtrise cette semaine !\n\n`;
+      } else if (score >= totalQuestions - 1) {
+        shareText += `👏 Presque parfait ! Très bon résultat !\n\n`;
+      } else if (score >= totalQuestions / 2) {
+        shareText += `💪 Bon travail ! Je continue mes efforts !\n\n`;
+      } else {
+        shareText += `📚 En progression dans mon étude !\n\n`;
+      }
+      
+      shareText += `Rejoignez-moi dans l'étude de Doctrine et Alliances !\n\n`;
+      shareText += `🎥 Approfondissement: https://www.youtube.com/@ecouteetpreteloreille4331\n`;
+      shareText += `📖 Manuel officiel: https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025?lang=fra`;
+      return shareText;
+    }
+
+    // Boutons de partage spécifiques
+    document.getElementById('share-whatsapp').addEventListener('click', () => {
+      const text = generateShareText();
+      const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    });
+
+    document.getElementById('share-twitter').addEventListener('click', () => {
+      const text = generateShareText();
+      const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    });
+
+    document.getElementById('share-telegram').addEventListener('click', () => {
+      const text = generateShareText();
+      const url = `https://t.me/share/url?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    });
+
+    document.getElementById('share-copy').addEventListener('click', async () => {
+      const text = generateShareText();
+      try {
+        await navigator.clipboard.writeText(text);
+        const button = document.getElementById('share-copy');
+        const originalText = button.innerHTML;
+        button.innerHTML = '✅ Copié !';
+        button.style.backgroundColor = '#10B981';
+        setTimeout(() => {
+          button.innerHTML = originalText;
+          button.style.backgroundColor = '#6B7280';
+        }, 2000);
+      } catch (err) {
+        alert('Impossible de copier automatiquement. Veuillez sélectionner et copier le texte manuellement.');
+        prompt('Copiez ce texte:', text);
+      }
+    });
 
     weekSelector.addEventListener('change', handleWeekChange);
     daySelector.addEventListener('change', handleDayChange);
