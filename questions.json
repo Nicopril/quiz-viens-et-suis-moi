@@ -39,7 +39,7 @@
         "question": "Dans D&A 86, quelle parabole est utilisée ?",
         "answers": [
           {
-            "text": "Le blé et l’ivraie",
+            "text": "Le blé et l'ivraie",
             "correct": true
           },
           {
@@ -75,7 +75,7 @@
         "question": "Quelle cause est à l'origine de la guerre annoncée dans D&A 87 ?",
         "answers": [
           {
-            "text": "La question de l’esclavage",
+            "text": "La question de l'esclavage",
             "correct": true
           },
           {
@@ -123,7 +123,7 @@
         ]
       },
       {
-        "question": "Dans D&A 86, que représente l’ivraie ?",
+        "question": "Dans D&A 86, que représente l'ivraie ?",
         "answers": [
           {
             "text": "Les enfants du malin",
@@ -153,7 +153,7 @@
             "correct": false
           },
           {
-            "text": "L’ange moissonneur",
+            "text": "L'ange moissonneur",
             "correct": false
           }
         ]
@@ -212,10 +212,10 @@
     ],
     "jour4": [
       {
-        "question": "Pourquoi le maître permet-il à l’ivraie de croître avec le blé (D&A 86) ?",
+        "question": "Pourquoi le maître permet-il à l'ivraie de croître avec le blé (D&A 86) ?",
         "answers": [
           {
-            "text": "Pour ne pas déraciner le blé en l’arrachant",
+            "text": "Pour ne pas déraciner le blé en l'arrachant",
             "correct": true
           },
           {
@@ -232,11 +232,11 @@
         "question": "Selon D&A 86, que doivent faire les saints en attendant la moisson ?",
         "answers": [
           {
-            "text": "Demeurer fidèles et patients dans l’œuvre",
+            "text": "Demeurer fidèles et patients dans l'œuvre",
             "correct": true
           },
           {
-            "text": "Séparer eux-mêmes l’ivraie du blé",
+            "text": "Séparer eux-mêmes l'ivraie du blé",
             "correct": false
           },
           {
@@ -249,7 +249,7 @@
         "question": "Que rappelle le Seigneur au sujet des alliances (D&A 86:8–10) ?",
         "answers": [
           {
-            "text": "Il se souvient de l’alliance faite avec les pères",
+            "text": "Il se souvient de l'alliance faite avec les pères",
             "correct": true
           },
           {
@@ -257,7 +257,7 @@
             "correct": false
           },
           {
-            "text": "Il remplace l’alliance par des traditions",
+            "text": "Il remplace l'alliance par des traditions",
             "correct": false
           }
         ]
@@ -302,15 +302,15 @@
         "question": "Selon D&A 87, quelle question alimenterait le conflit ?",
         "answers": [
           {
-            "text": "La question de l’esclavage",
+            "text": "La question de l'esclavage",
             "correct": true
           },
           {
-            "text": "La monnaie d’or et d’argent",
+            "text": "La monnaie d'or et d'argent",
             "correct": false
           },
           {
-            "text": "La colonisation de l’Ouest",
+            "text": "La colonisation de l'Ouest",
             "correct": false
           }
         ]
@@ -333,7 +333,7 @@
         ]
       },
       {
-        "question": "Que dit D&A 87 au sujet de l’étendue des guerres ?",
+        "question": "Que dit D&A 87 au sujet de l'étendue des guerres ?",
         "answers": [
           {
             "text": "Elles se répandront parmi toutes les nations",
@@ -391,7 +391,7 @@
         "question": "Selon D&A 88:118, comment chercher la connaissance ?",
         "answers": [
           {
-            "text": "Par l’étude et aussi par la foi",
+            "text": "Par l'étude et aussi par la foi",
             "correct": true
           },
           {
@@ -461,7 +461,7 @@
         "question": "Que nous commande D&A 88:124 ?",
         "answers": [
           {
-            "text": "De cesser d’être oisifs et impurs",
+            "text": "De cesser d'être oisifs et impurs",
             "correct": true
           },
           {
@@ -475,10 +475,10 @@
         ]
       },
       {
-        "question": "Quel est l’ordre de salutation de l’École des prophètes ?",
+        "question": "Quel est l'ordre de salutation de l'École des prophètes ?",
         "answers": [
           {
-            "text": "S’élever les mains et saluer au nom de Jésus-Christ",
+            "text": "S'élever les mains et saluer au nom de Jésus-Christ",
             "correct": true
           },
           {
@@ -486,7 +486,7 @@
             "correct": false
           },
           {
-            "text": "S’incliner en signe de respect",
+            "text": "S'incliner en signe de respect",
             "correct": false
           }
         ]
@@ -497,7 +497,7 @@
         "question": "Selon D&A 88:12, que fait la lumière du Christ ?",
         "answers": [
           {
-            "text": "Elle remplit l’immensité de l’espace",
+            "text": "Elle remplit l'immensité de l'espace",
             "correct": true
           },
           {
@@ -511,7 +511,7 @@
         ]
       },
       {
-        "question": "D’après D&A 88:13, quel lien entre la lumière du Christ et la loi ?",
+        "question": "D'après D&A 88:13, quel lien entre la lumière du Christ et la loi ?",
         "answers": [
           {
             "text": "Elle est la loi qui gouverne toutes choses",
@@ -564,7 +564,7 @@
     ],
     "jour4": [
       {
-        "question": "Pourquoi établir l’École des prophètes (D&A 88) ?",
+        "question": "Pourquoi établir l'École des prophètes (D&A 88) ?",
         "answers": [
           {
             "text": "Pour instruire dans les choses du royaume",
@@ -581,10 +581,10 @@
         ]
       },
       {
-        "question": "Quelle préparation est requise pour ceux qui s’y réunissent ?",
+        "question": "Quelle préparation est requise pour ceux qui s'y réunissent ?",
         "answers": [
           {
-            "text": "Se sanctifier et s’unir dans la prière",
+            "text": "Se sanctifier et s'unir dans la prière",
             "correct": true
           },
           {
@@ -592,20 +592,20 @@
             "correct": false
           },
           {
-            "text": "Apprendre uniquement l’hébreu",
+            "text": "Apprendre uniquement l'hébreu",
             "correct": false
           }
         ]
       },
       {
-        "question": "Quel est l’ordre de salutation prescrit (D&A 88) ?",
+        "question": "Quel est l'ordre de salutation prescrit (D&A 88) ?",
         "answers": [
           {
             "text": "Saluer au nom de Jésus-Christ",
             "correct": true
           },
           {
-            "text": "S’incliner trois fois",
+            "text": "S'incliner trois fois",
             "correct": false
           },
           {
@@ -618,7 +618,7 @@
         "question": "Que doivent-ils établir selon D&A 88 ?",
         "answers": [
           {
-            "text": "Une maison de prière, de jeûne, de foi et d’instruction",
+            "text": "Une maison de prière, de jeûne, de foi et d'instruction",
             "correct": true
           },
           {
@@ -637,7 +637,7 @@
         "question": "Que commande D&A 88:124 ?",
         "answers": [
           {
-            "text": "Cesser d’être oisifs et impurs",
+            "text": "Cesser d'être oisifs et impurs",
             "correct": true
           },
           {
@@ -668,10 +668,10 @@
         ]
       },
       {
-        "question": "Quel principe d’apprentissage D&A 88:118 enseigne-t-il ?",
+        "question": "Quel principe d'apprentissage D&A 88:118 enseigne-t-il ?",
         "answers": [
           {
-            "text": "Chercher la connaissance par l’étude et aussi par la foi",
+            "text": "Chercher la connaissance par l'étude et aussi par la foi",
             "correct": true
           },
           {
@@ -679,7 +679,7 @@
             "correct": false
           },
           {
-            "text": "S’appuyer uniquement sur l’autorité des anciens",
+            "text": "S'appuyer uniquement sur l'autorité des anciens",
             "correct": false
           }
         ]
@@ -704,11 +704,356 @@
     ]
   },
   "18–24 août | D&A 89–92": {
-    "jour1": [],
-    "jour2": [],
-    "jour3": [],
-    "jour4": [],
-    "jour5": []
+    "jour1": [
+      {
+        "question": "Selon D&A 89:2–3, quel est l'objectif principal de la Parole de Sagesse ?",
+        "answers": [
+          {
+            "text": "Donner un principe avec promesse pour la santé et la protection",
+            "correct": true
+          },
+          {
+            "text": "Remplacer la loi de Moïse par des ordonnances",
+            "correct": false
+          },
+          {
+            "text": "Établir un régime strict identique pour tous",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que recommande D&A 89 au sujet des boissons fortes ?",
+        "answers": [
+          {
+            "text": "Elles ne conviennent pas au corps ni au ventre",
+            "correct": true
+          },
+          {
+            "text": "Elles sont acceptables avec modération",
+            "correct": false
+          },
+          {
+            "text": "Elles sont réservées au sabbat",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Dans D&A 89, comment faut-il utiliser la viande ?",
+        "answers": [
+          {
+            "text": "Avec parcimonie, et de préférence en temps d'hiver ou de famine",
+            "correct": true
+          },
+          {
+            "text": "À volonté, car tout ce que Dieu crée est pur",
+            "correct": false
+          },
+          {
+            "text": "Uniquement lors des fêtes solennelles",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quels aliments sont ordonnés pour la constitution, la nature et l'usage de l'homme (D&A 89) ?",
+        "answers": [
+          {
+            "text": "Les herbes et les céréales",
+            "correct": true
+          },
+          {
+            "text": "Les sucreries et les épices",
+            "correct": false
+          },
+          {
+            "text": "Les viandes grasses en priorité",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour2": [
+      {
+        "question": "D&A 89:7–9 enseigne à propos du tabac, des boissons chaudes et des boissons fortes. Laquelle est correcte ?",
+        "answers": [
+          {
+            "text": "Le tabac n'est pas pour le corps; les boissons chaudes ne sont pas pour le corps ni le ventre",
+            "correct": true
+          },
+          {
+            "text": "Le tabac est acceptable en médecine domestique",
+            "correct": false
+          },
+          {
+            "text": "Les boissons fortes sont acceptables si diluées",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quelles promesses sont liées à l'observance de la Parole de Sagesse (D&A 89:18–21) ?",
+        "answers": [
+          {
+            "text": "Santé dans le nombril, moelle dans les os, sagesse, trésors de connaissance, et l'ange destructeur passera outre",
+            "correct": true
+          },
+          {
+            "text": "Richesse matérielle garantie et longévité certaine",
+            "correct": false
+          },
+          {
+            "text": "Don des langues et visions assurées",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 89, quelles céréales sont « bonnes pour l'homme » comme aliment principal ?",
+        "answers": [
+          {
+            "text": "Le blé pour l'homme; d'autres grains pour les bêtes et oiseaux",
+            "correct": true
+          },
+          {
+            "text": "L'orge uniquement",
+            "correct": false
+          },
+          {
+            "text": "Le maïs uniquement",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel principe général résume la Parole de Sagesse ?",
+        "answers": [
+          {
+            "text": "User avec prudence et reconnaissance des dons de Dieu",
+            "correct": true
+          },
+          {
+            "text": "Éviter toutes les nourritures animales sans exception",
+            "correct": false
+          },
+          {
+            "text": "Pratiquer des jeûnes prolongés hebdomadaires",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour3": [
+      {
+        "question": "D&A 90 confère à Joseph Smith et à ses conseillers des responsabilités spécifiques. Laquelle ?",
+        "answers": [
+          {
+            "text": "Les clés de la Première Présidence pour diriger l'Église",
+            "correct": true
+          },
+          {
+            "text": "La charge d'administrer seulement les affaires temporelles",
+            "correct": false
+          },
+          {
+            "text": "Un pouvoir limité aux branches de Kirtland",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 90, quel rôle a Joseph Smith concernant les oracles ?",
+        "answers": [
+          {
+            "text": "Recevoir les oracles de Dieu pour l'Église",
+            "correct": true
+          },
+          {
+            "text": "Traduire uniquement les Écritures anciennes sans révélation",
+            "correct": false
+          },
+          {
+            "text": "Transmettre l'autorité aux rois de la terre",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que dit D&A 90 à propos d'Orson Hyde et William McLellin ?",
+        "answers": [
+          {
+            "text": "Ils doivent se repentir et magnifier leur appel",
+            "correct": true
+          },
+          {
+            "text": "Ils sont relevés de tout ministère",
+            "correct": false
+          },
+          {
+            "text": "Ils sont appelés à gouverner la Première Présidence",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 90, quelle est la responsabilité continue des présidents ?",
+        "answers": [
+          {
+            "text": "Prêcher l'Évangile aux nations et régler l'Église selon les révélations",
+            "correct": true
+          },
+          {
+            "text": "S'occuper exclusivement des finances",
+            "correct": false
+          },
+          {
+            "text": "Limiter l'œuvre aux frontières locales",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour4": [
+      {
+        "question": "Que conseille D&A 91 au sujet des livres apocryphes ?",
+        "answers": [
+          {
+            "text": "Il y a des choses utiles; lisez-les avec prudence, sous la direction de l'Esprit",
+            "correct": true
+          },
+          {
+            "text": "Ils doivent être ajoutés canoniquement sans réserve",
+            "correct": false
+          },
+          {
+            "text": "Ils sont totalement à rejeter",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 91, comment discerner la vérité dans l'apocryphe ?",
+        "answers": [
+          {
+            "text": "Par la révélation personnelle et le Saint-Esprit",
+            "correct": true
+          },
+          {
+            "text": "Par la tradition populaire uniquement",
+            "correct": false
+          },
+          {
+            "text": "Par le vote de la congrégation",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "D&A 92 s'adresse notamment à Frederick G. Williams. Quel est l'appel ?",
+        "answers": [
+          {
+            "text": "Être « un cœur singulier » et s'unir à l'ordre (United Firm)",
+            "correct": true
+          },
+          {
+            "text": "Se retirer de toute responsabilité",
+            "correct": false
+          },
+          {
+            "text": "Fonder un nouvel ordre financier séparé",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que signifie « un cœur singulier » (D&A 92) appliqué aux saints ?",
+        "answers": [
+          {
+            "text": "Chercher l'unité, la droiture et la consécration dans l'œuvre de Dieu",
+            "correct": true
+          },
+          {
+            "text": "Renoncer à toute propriété temporelle",
+            "correct": false
+          },
+          {
+            "text": "S'abstenir de prière publique",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour5": [
+      {
+        "question": "Selon D&A 89, quelle promesse est faite à ceux qui obéissent fidèlement ?",
+        "answers": [
+          {
+            "text": "Ils recevront sagesse, santé et protection spirituelle",
+            "correct": true
+          },
+          {
+            "text": "Ils seront exempts de toute maladie à jamais",
+            "correct": false
+          },
+          {
+            "text": "Ils recevront immédiatement tous les dons spirituels",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel résumé doctrinal relie D&A 89–92 ?",
+        "answers": [
+          {
+            "text": "Santé et sagesse (89); gouvernement par clés et oracles (90); discernement par l'Esprit (91); unité d'un cœur singulier (92)",
+            "correct": true
+          },
+          {
+            "text": "Jeûne constant (89); abolition des clés (90); rejet des livres (91); division fraternelle (92)",
+            "correct": false
+          },
+          {
+            "text": "Ascèse stricte (89); autorité civile (90); silence doctrinal (91); autonomie individuelle (92)",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel principe de D&A 91 s'applique de façon générale à l'étude ?",
+        "answers": [
+          {
+            "text": "Examiner toute chose avec l'aide de l'Esprit pour retenir le bien",
+            "correct": true
+          },
+          {
+            "text": "Éviter tout livre non canonique",
+            "correct": false
+          },
+          {
+            "text": "S'en remettre seulement aux commentaires populaires",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Dans D&A 92, l'invitation « un cœur singulier » appelle surtout à…",
+        "answers": [
+          {
+            "text": "L'unité, la loyauté aux alliances et la participation fidèle à l'œuvre",
+            "correct": true
+          },
+          {
+            "text": "La séparation des responsabilités temporelles et spirituelles",
+            "correct": false
+          },
+          {
+            "text": "La recherche d'intérêts personnels d'abord",
+            "correct": false
+          }
+        ]
+      }
+    ]
   },
   "25–31 août | D&A 93": {
     "jour1": [],
