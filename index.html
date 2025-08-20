@@ -77,6 +77,167 @@
       background-color: #fff;
     }
 
+    /* Mode révision */
+    #quiz-mode-info {
+      text-align: center;
+      margin: 1rem 0;
+      font-style: italic;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    .revision-btn {
+      background-color: #F59E0B;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 0.5rem;
+      transition: background-color 0.3s;
+    }
+
+    .revision-btn:hover {
+      background-color: #D97706;
+    }
+
+    /* Bouton Statistiques */
+    .stats-toggle {
+      display: flex;
+      justify-content: center;
+      margin: 1.5rem 0;
+    }
+
+    .stats-btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+
+    .stats-btn:hover {
+      background-color: #004374;
+    }
+
+    /* Section Statistiques */
+    .stats-section {
+      display: none;
+      background-color: rgba(216, 234, 251, 0.3);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .stats-section h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .stats-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-card {
+      background-color: white;
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #6B7280;
+      margin-top: 0.25rem;
+    }
+
+    /* Graphique simple */
+    .chart-container {
+      background-color: white;
+      border-radius: var(--border-radius);
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    .chart-title {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    .chart {
+      display: flex;
+      align-items: end;
+      height: 200px;
+      gap: 8px;
+      padding: 0 1rem;
+      border-bottom: 2px solid #E5E7EB;
+      border-left: 2px solid #E5E7EB;
+    }
+
+    .bar {
+      background: linear-gradient(to top, var(--primary-color), var(--accent-color));
+      border-radius: 4px 4px 0 0;
+      min-width: 30px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .bar:hover {
+      transform: scale(1.05);
+    }
+
+    .bar-label {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
+    .bar-value {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .clear-stats {
+      background-color: #EF4444;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      float: right;
+    }
+
+    .clear-stats:hover {
+      background-color: #DC2626;
+    }
+
     #quiz-area {
       margin-top: 2rem;
     }
@@ -272,17 +433,17 @@
     #quote-container {
       display: flex;
       align-items: center;
-      gap: 1rem; /* Espace entre la photo et la citation */
+      gap: 1rem;
     }
 
     #quote-container img {
-      width: 100px; /* Taille ajustable, change-la si besoin */
+      width: 100px;
       height: auto;
-      border-radius: 50%; /* Pour un effet circulaire, optionnel */
+      border-radius: 50%;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* Améliorations pour desktop : disposition verticale aérée + arrière-plan */
+    /* Améliorations pour desktop */
     @media (min-width: 1024px) {
       body {
         background: linear-gradient(135deg, #E0F2FE 0%, #BAE6FD 50%, #7DD3FC 100%);
@@ -382,6 +543,10 @@
         margin: 0 auto 1rem auto;
       }
 
+      .stats-summary {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
       #end-message {
         font-size: 1.3rem;
         text-align: center;
@@ -397,7 +562,7 @@
       J'espère que ces quiz vous aideront à approfondir les principes et la doctrine étudiés chaque semaine.
       Les quiz seront mise à jour chaque semaine.Bon courage à tous !</p>
     
-    <!-- Nouveau conteneur pour la photo + citation -->
+    <!-- Conteneur pour la photo + citation -->
     <div id="quote-container">
       <img src="./nelson.jpeg" alt="Portrait du prophète Russell M. Nelson">
       <blockquote>
@@ -405,6 +570,44 @@
         les paroles du Christ vous diront tout ce que vous devez faire."<br />
         <strong>- Président Russell M. Nelson</strong>
       </blockquote>
+    </div>
+
+    <!-- Bouton pour afficher/masquer les statistiques -->
+    <div class="stats-toggle">
+      <button class="stats-btn" id="stats-toggle-btn">📊 Voir mes statistiques</button>
+    </div>
+
+    <!-- Section Statistiques -->
+    <div class="stats-section" id="stats-section">
+      <h3>📊 Mes Statistiques</h3>
+      
+      <div class="stats-summary" id="stats-summary">
+        <div class="stat-card">
+          <div class="stat-number" id="total-quizzes">0</div>
+          <div class="stat-label">Quiz terminés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="average-score">0%</div>
+          <div class="stat-label">Score moyen</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="best-score">0%</div>
+          <div class="stat-label">Meilleur score</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="perfect-scores">0</div>
+          <div class="stat-label">Scores parfaits</div>
+        </div>
+      </div>
+
+      <div class="chart-container">
+        <div class="chart-title">Évolution des 10 derniers scores</div>
+        <div class="chart" id="score-chart">
+          <div style="text-align: center; color: #6B7280; margin: auto;">Aucune donnée encore disponible</div>
+        </div>
+      </div>
+
+      <button class="clear-stats" id="clear-stats-btn">🗑️ Effacer mes statistiques</button>
     </div>
 
     <div class="selector-container">
@@ -416,6 +619,9 @@
       <label for="day-selector">Jour :</label>
       <select id="day-selector"></select>
     </div>
+
+    <!-- NOUVEAU: Indicateur du mode actuel -->
+    <p id="quiz-mode-info"></p>
 
     <div id="quiz-area" class="hidden">
       <div id="question"></div>
@@ -456,12 +662,174 @@
     const nextButton = document.getElementById('next-btn');
     const shareButtons = document.getElementById('share-buttons');
     const scoreElement = document.getElementById('score');
+    const quizModeInfo = document.getElementById('quiz-mode-info');
+
+    // Éléments pour les statistiques
+    const statsToggleBtn = document.getElementById('stats-toggle-btn');
+    const statsSection = document.getElementById('stats-section');
+    const clearStatsBtn = document.getElementById('clear-stats-btn');
 
     let allData = {};
     let currentQuestions = [];
     let availableQuestions = [];
     let currentQuestionIndex;
     let score = 0;
+
+    // NOUVEAU: Variables pour le mode révision
+    let revisionQuestions = [];
+    let isRevisionMode = false;
+    let originalQuestions = []; // Sauvegarde des questions originales
+
+    // Gestion des statistiques
+    let stats = {
+      history: [],
+      totalQuizzes: 0,
+      averageScore: 0,
+      bestScore: 0,
+      perfectScores: 0
+    };
+
+    // Charger les statistiques du localStorage
+    function loadStats() {
+      const savedStats = localStorage.getItem('quiz-stats');
+      if (savedStats) {
+        stats = JSON.parse(savedStats);
+      }
+      updateStatsDisplay();
+    }
+
+    // Sauvegarder les statistiques
+    function saveStats() {
+      localStorage.setItem('quiz-stats', JSON.stringify(stats));
+    }
+
+    // Ajouter un nouveau score aux statistiques
+    function addScore(week, day, score, total) {
+      const percentage = Math.round((score / total) * 100);
+      const date = new Date().toLocaleDateString('fr-FR');
+      
+      stats.history.push({
+        date,
+        week: week.split(' | ')[0],
+        day,
+        score,
+        total,
+        percentage
+      });
+
+      if (stats.history.length > 50) {
+        stats.history = stats.history.slice(-50);
+      }
+
+      stats.totalQuizzes = stats.history.length;
+      stats.averageScore = Math.round(stats.history.reduce((sum, item) => sum + item.percentage, 0) / stats.totalQuizzes);
+      stats.bestScore = Math.max(...stats.history.map(item => item.percentage));
+      stats.perfectScores = stats.history.filter(item => item.percentage === 100).length;
+
+      saveStats();
+      updateStatsDisplay();
+    }
+
+    // Mettre à jour l'affichage des statistiques
+    function updateStatsDisplay() {
+      document.getElementById('total-quizzes').textContent = stats.totalQuizzes;
+      document.getElementById('average-score').textContent = stats.averageScore + '%';
+      document.getElementById('best-score').textContent = stats.bestScore + '%';
+      document.getElementById('perfect-scores').textContent = stats.perfectScores;
+      updateChart();
+    }
+
+    // Créer le graphique
+    function updateChart() {
+      const chartContainer = document.getElementById('score-chart');
+      
+      if (stats.history.length === 0) {
+        chartContainer.innerHTML = '<div style="text-align: center; color: #6B7280; margin: auto;">Aucune donnée encore disponible</div>';
+        return;
+      }
+
+      const recentScores = stats.history.slice(-10);
+      chartContainer.innerHTML = '';
+      
+      recentScores.forEach((item, index) => {
+        const bar = document.createElement('div');
+        bar.className = 'bar';
+        bar.style.height = `${(item.percentage / 100) * 180}px`;
+        
+        if (item.percentage === 100) {
+          bar.style.background = 'linear-gradient(to top, #10B981, #6EE7B7)';
+        } else if (item.percentage >= 75) {
+          bar.style.background = 'linear-gradient(to top, #3B82F6, #93C5FD)';
+        } else if (item.percentage >= 50) {
+          bar.style.background = 'linear-gradient(to top, #F59E0B, #FCD34D)';
+        } else {
+          bar.style.background = 'linear-gradient(to top, #EF4444, #FCA5A5)';
+        }
+
+        const label = document.createElement('div');
+        label.className = 'bar-label';
+        label.textContent = item.date.split('/').slice(0,2).join('/');
+        bar.appendChild(label);
+
+        const value = document.createElement('div');
+        value.className = 'bar-value';
+        value.textContent = item.percentage + '%';
+        bar.appendChild(value);
+
+        bar.title = `${item.date}: ${item.score}/${item.total} (${item.percentage}%) - ${item.week} ${item.day}`;
+        chartContainer.appendChild(bar);
+      });
+    }
+
+    // Toggle affichage des statistiques
+    statsToggleBtn.addEventListener('click', () => {
+      const isVisible = statsSection.style.display !== 'none';
+      if (isVisible) {
+        statsSection.style.display = 'none';
+        statsToggleBtn.textContent = '📊 Voir mes statistiques';
+      } else {
+        statsSection.style.display = 'block';
+        statsToggleBtn.textContent = '📊 Masquer les statistiques';
+        updateStatsDisplay();
+      }
+    });
+
+    // Effacer les statistiques
+    clearStatsBtn.addEventListener('click', () => {
+      if (confirm('Êtes-vous sûr de vouloir effacer toutes vos statistiques ? Cette action est irréversible.')) {
+        stats = {
+          history: [],
+          totalQuizzes: 0,
+          averageScore: 0,
+          bestScore: 0,
+          perfectScores: 0
+        };
+        saveStats();
+        updateStatsDisplay();
+      }
+    });
+
+    // NOUVEAU: Démarrer le mode révision
+    function startRevisionMode() {
+      if (revisionQuestions.length === 0) {
+        alert('🎉 Parfait ! Aucune question à revoir. Toutes vos réponses étaient correctes !');
+        return;
+      }
+
+      isRevisionMode = true;
+      currentQuestions = [...revisionQuestions];
+      availableQuestions = [...revisionQuestions];
+      revisionQuestions = []; // Vider pour ce nouveau tour
+      score = 0;
+      scoreElement.textContent = 'Score : 0';
+      
+      quizModeInfo.innerHTML = '🔄 <strong>Mode Révision</strong> : Travaillez les questions où vous avez fait des erreurs';
+      
+      nextButton.style.display = 'none';
+      shareButtons.style.display = 'none';
+      
+      showNextQuestion();
+    }
 
     async function loadQuestions() {
       try {
@@ -470,7 +838,6 @@
         allData = await response.json();
         populateWeekSelector();
         
-        // Sélectionne automatiquement la semaine actuelle (18-24 août)
         const currentWeek = "18–24 août | D&A 89–92";
         const weekKeys = Object.keys(allData);
         const currentWeekIndex = weekKeys.indexOf(currentWeek);
@@ -478,10 +845,11 @@
         if (currentWeekIndex !== -1) {
           weekSelector.selectedIndex = currentWeekIndex;
         } else {
-          weekSelector.selectedIndex = 0; // Si pas trouvé, prendre la première
+          weekSelector.selectedIndex = 0;
         }
         
         handleWeekChange();
+        loadStats();
       } catch (error) {
         console.error("Erreur lors du chargement du fichier de questions:", error);
         questionElement.innerText = "Impossible de charger les questions.";
@@ -517,7 +885,6 @@
     }
 
     function handleWeekChange() {
-      // Supprime le message de fin s'il existe
       const oldEndMsg = document.getElementById('end-message');
       if (oldEndMsg) oldEndMsg.remove();
       const oldStudyLinks = document.querySelector('.study-links');
@@ -529,7 +896,6 @@
     }
 
     function handleDayChange() {
-      // Supprime le message de fin s'il existe
       const oldEndMsg = document.getElementById('end-message');
       if (oldEndMsg) oldEndMsg.remove();
       const oldStudyLinks = document.querySelector('.study-links');
@@ -540,6 +906,7 @@
 
       if (selectedWeek && selectedDay && allData[selectedWeek][selectedDay]) {
         currentQuestions = allData[selectedWeek][selectedDay];
+        originalQuestions = [...currentQuestions]; // Sauvegarder l'original
         startQuiz();
       } else {
         quizArea.classList.add('hidden');
@@ -555,6 +922,10 @@
     }
 
     function startQuiz() {
+      isRevisionMode = false;
+      revisionQuestions = [];
+      quizModeInfo.textContent = '';
+      
       if (currentQuestions.length === 0) {
         quizArea.classList.remove('hidden');
         questionElement.innerText = "Il n'y a pas de questions pour ce jour.";
@@ -578,14 +949,42 @@
 
     function showNextQuestion() {
       if (availableQuestions.length === 0) {
-        questionElement.innerText = "Quiz du jour terminé !";
+        questionElement.innerText = "Quiz terminé !";
         answerButtonsElement.innerHTML = '';
-        nextButton.innerText = "Recommencer";
-        nextButton.onclick = startQuiz;
+        
+        nextButton.innerText = isRevisionMode ? "Revenir au quiz normal" : "Recommencer";
+        nextButton.onclick = () => {
+          if (isRevisionMode) {
+            isRevisionMode = false;
+            currentQuestions = [...originalQuestions];
+            quizModeInfo.textContent = '';
+            startQuiz();
+          } else {
+            startQuiz();
+          }
+        };
+        
         nextButton.style.display = 'block';
         shareButtons.style.display = 'block';
 
-        // Message animé avec le score final et encouragements personnalisés
+        // Sauvegarder les stats seulement en mode normal
+        if (!isRevisionMode) {
+          const selectedWeek = weekSelector.value;
+          const selectedDay = daySelector.value;
+          const totalQuestions = currentQuestions.length;
+          addScore(selectedWeek, selectedDay, score, totalQuestions);
+
+          // Proposer le mode révision si il y a des erreurs
+          if (revisionQuestions.length > 0) {
+            const revisionBtn = document.createElement('button');
+            revisionBtn.className = 'revision-btn';
+            revisionBtn.textContent = `🔄 Revoir les ${revisionQuestions.length} question${revisionQuestions.length > 1 ? 's' : ''} ratée${revisionQuestions.length > 1 ? 's' : ''}`;
+            revisionBtn.onclick = startRevisionMode;
+            quizModeInfo.appendChild(revisionBtn);
+          }
+        }
+
+        // Message d'encouragement
         const endMessage = document.createElement('p');
         endMessage.id = 'end-message';
         const totalQuestions = currentQuestions.length;
@@ -601,10 +1000,11 @@
           encouragement = "📖 Prenez le temps de relire cette semaine. 📖";
         }
 
-        endMessage.innerHTML = `Vous avez obtenu <strong>${score} bonne${score > 1 ? 's' : ''} réponse${score > 1 ? 's' : ''}</strong> sur ${totalQuestions}.<br/><br/>${encouragement}<br/><br/>À demain pour de nouvelles découvertes !`;
+        const modeText = isRevisionMode ? " (Révision)" : "";
+        endMessage.innerHTML = `Vous avez obtenu <strong>${score} bonne${score > 1 ? 's' : ''} réponse${score > 1 ? 's' : ''}</strong> sur ${totalQuestions}${modeText}.<br/><br/>${encouragement}<br/><br/>À demain pour de nouvelles découvertes !`;
         quizArea.appendChild(endMessage);
 
-        // Ajout des liens d'approfondissement
+        // Liens d'approfondissement
         const studyLinks = document.createElement('div');
         studyLinks.className = 'study-links';
         studyLinks.innerHTML = `
@@ -649,6 +1049,7 @@
     function selectAnswer(e) {
       const selectedButton = e.target;
       const correct = selectedButton.dataset.correct === "true";
+      const currentQuestion = availableQuestions[currentQuestionIndex];
 
       Array.from(answerButtonsElement.children).forEach(button => {
         button.disabled = true;
@@ -665,6 +1066,11 @@
       if (correct) {
         score++;
         scoreElement.innerText = 'Score : ' + score;
+      } else {
+        // NOUVEAU: Ajouter à la liste de révision si mauvaise réponse
+        if (!revisionQuestions.some(q => q.question === currentQuestion.question)) {
+          revisionQuestions.push(currentQuestion);
+        }
       }
 
       availableQuestions.splice(currentQuestionIndex, 1);
@@ -696,7 +1102,7 @@
       return shareText;
     }
 
-    // Boutons de partage spécifiques
+    // Boutons de partage
     document.getElementById('share-whatsapp').addEventListener('click', () => {
       const text = generateShareText();
       const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
