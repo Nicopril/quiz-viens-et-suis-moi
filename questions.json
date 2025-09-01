@@ -688,11 +688,176 @@
     ]
   },
   "1–7 septembre | D&A 94–97": {
-    "jour1": [],
-    "jour2": [],
-    "jour3": [],
-    "jour4": [],
-    "jour5": []
+    "jour1": [
+      {
+        "question": "Outre le temple, quels deux autres bâtiments le Seigneur commande-t-il de construire à Kirtland (D&A 94) ?",
+        "answers": [
+          {"text": "Une maison pour la présidence et une pour l'imprimerie", "correct": true},
+          {"text": "Une école et un grenier", "correct": false},
+          {"text": "Deux temples supplémentaires", "correct": false}
+        ]
+      },
+      {
+        "question": "Selon quel modèle ces bâtiments devaient-ils être construits (D&A 94:2) ?",
+        "answers": [
+          {"text": "Selon un modèle que le Seigneur montrerait à trois d'entre eux", "correct": true},
+          {"text": "Selon la meilleure architecture de l'Ohio", "correct": false},
+          {"text": "Selon les préférences personnelles de Joseph Smith", "correct": false}
+        ]
+      },
+      {
+        "question": "Quelle était la fonction de la maison destinée à la présidence (D&A 94:3-4) ?",
+        "answers": [
+          {"text": "Le travail de traduction des Écritures et la réception de révélations", "correct": true},
+          {"text": "Héberger exclusivement la famille de Joseph Smith", "correct": false},
+          {"text": "Tenir toutes les réunions de l'Église", "correct": false}
+        ]
+      },
+      {
+        "question": "Le principe de bâtir 'selon le modèle' s'applique aussi à notre vie. Comment ?",
+        "answers": [
+          {"text": "En bâtissant notre vie et notre famille sur les principes de l'Évangile", "correct": true},
+          {"text": "Cela ne s'applique qu'à la construction de temples", "correct": false},
+          {"text": "En copiant la vie des autres", "correct": false}
+        ]
+      }
+    ],
+    "jour2": [
+      {
+        "question": "Pourquoi le Seigneur dit-il qu'il châtie son peuple (D&A 95:1) ?",
+        "answers": [
+          {"text": "Parce qu'il les aime et veut qu'ils participent à sa gloire", "correct": true},
+          {"text": "Parce qu'ils ont commis un péché impardonnable", "correct": false},
+          {"text": "Pour leur montrer qui est le plus fort", "correct": false}
+        ]
+      },
+      {
+        "question": "Quel était le 'très grand péché' des saints mentionné dans D&A 95:3 ?",
+        "answers": [
+          {"text": "Ils avaient tardé à construire la maison du Seigneur (le temple)", "correct": true},
+          {"text": "Ils n'avaient pas payé leur dîme", "correct": false},
+          {"text": "Ils s'étaient disputés au sujet des dirigeants", "correct": false}
+        ]
+      },
+      {
+        "question": "Dans quoi les saints marchaient-ils, et dont le Seigneur voulait les voir s'éveiller (D&A 95:5-6) ?",
+        "answers": [
+          {"text": "Dans les ténèbres en plein midi", "correct": true},
+          {"text": "Sur le chemin de la justice", "correct": false},
+          {"text": "Dans les champs de l'Ohio", "correct": false}
+        ]
+      },
+      {
+        "question": "Quelle grande bénédiction le Seigneur a-t-il promise s'ils construisaient le temple (D&A 95:8) ?",
+        "answers": [
+          {"text": "Un don de puissance d'en haut", "correct": true},
+          {"text": "Une grande richesse temporelle", "correct": false},
+          {"text": "La destruction de tous leurs ennemis", "correct": false}
+        ]
+      }
+    ],
+    "jour3": [
+      {
+        "question": "Dans D&A 96, que devait faire Newel K. Whitney des propriétés de l'Église à Kirtland ?",
+        "answers": [
+          {"text": "Les répartir entre les saints pour leur héritage", "correct": true},
+          {"text": "Tout vendre pour faire un profit", "correct": false},
+          {"text": "Construire une grande ferme pour lui-même", "correct": false}
+        ]
+      },
+      {
+        "question": "Quel est le but de l'établissement d'un 'pieu de Sion' à Kirtland (D&A 96:1) ?",
+        "answers": [
+          {"text": "Pour le salut de Sion et pour être une défense", "correct": true},
+          {"text": "Pour rivaliser avec le Missouri", "correct": false},
+          {"text": "Pour créer une nouvelle capitale", "correct": false}
+        ]
+      },
+      {
+        "question": "Le Seigneur dit que Kirtland doit 'être rendue forte' (D&A 96:2). Comment la consécration aide-t-elle ?",
+        "answers": [
+          {"text": "Elle unit les saints et fournit des ressources pour l'œuvre du Seigneur", "correct": true},
+          {"text": "Elle rend les individus plus riches", "correct": false},
+          {"text": "Elle prouve leur loyauté envers le gouvernement", "correct": false}
+        ]
+      },
+      {
+        "question": "Qui devait être membre de l'Ordre uni et superviser ces questions avec Joseph Smith (D&A 96:2) ?",
+        "answers": [
+          {"text": "Newel K. Whitney", "correct": true},
+          {"text": "Sidney Rigdon", "correct": false},
+          {"text": "Frederick G. Williams", "correct": false}
+        ]
+      }
+    ],
+    "jour4": [
+      {
+        "question": "À qui s'adresse D&A 97, principalement ?",
+        "answers": [
+          {"text": "Aux saints du comté de Jackson, Missouri (Sion)", "correct": true},
+          {"text": "Aux saints de Kirtland, Ohio", "correct": false},
+          {"text": "Aux habitants de Far West", "correct": false}
+        ]
+      },
+      {
+        "question": "Quelle est la définition de 'Sion' donnée par le Seigneur dans D&A 97:21 ?",
+        "answers": [
+          {"text": "Les cœurs purs", "correct": true},
+          {"text": "Une ville géographique spécifique", "correct": false},
+          {"text": "Le temple lui-même", "correct": false}
+        ]
+      },
+      {
+        "question": "Quelle offrande spécifique le Seigneur a-t-il exigée des saints de Sion pour prouver leur obéissance (D&A 97:10-12) ?",
+        "answers": [
+          {"text": "Construire un temple", "correct": true},
+          {"text": "Donner tout leur argent aux pauvres", "correct": false},
+          {"text": "Partir en mission", "correct": false}
+        ]
+      },
+      {
+        "question": "Que doit faire le peuple pour que le temple soit un lieu saint et acceptable pour le Seigneur (D&A 97:15) ?",
+        "answers": [
+          {"text": "Le construire avec le cœur pur et ne pas le souiller", "correct": true},
+          {"text": "Utiliser uniquement les matériaux les plus chers", "correct": false},
+          {"text": "Le finir en moins d'un an", "correct": false}
+        ]
+      }
+    ],
+    "jour5": [
+      {
+        "question": "Quel avertissement est donné si Sion est 'polluée' et ne garde pas les commandements (D&A 97:22-24) ?",
+        "answers": [
+          {"text": "Elle sera visitée par de grandes afflictions et la peste", "correct": true},
+          {"text": "Le temple sera déplacé à Kirtland", "correct": false},
+          {"text": "Les dirigeants seront remplacés", "correct": false}
+        ]
+      },
+      {
+        "question": "Comment le Seigneur appelle-t-il la dîme de son peuple (D&A 97:11) ?",
+        "answers": [
+          {"text": "Un sacrifice", "correct": true},
+          {"text": "Une taxe", "correct": false},
+          {"text": "Un don", "correct": false}
+        ]
+      },
+      {
+        "question": "Qui est appelé à présider l'école de Sion dans D&A 97:3-5 ?",
+        "answers": [
+          {"text": "Parley P. Pratt", "correct": true},
+          {"text": "La construction du temple", "correct": false},
+          {"text": "Les finances de l'Église", "correct": false}
+        ]
+      },
+      {
+        "question": "Quelle est la promesse ultime si Sion (les cœurs purs) est établie et persévère ?",
+        "answers": [
+          {"text": "La gloire et la présence du Seigneur seront là", "correct": true},
+          {"text": "Ils n'auront plus d'épreuves", "correct": false},
+          {"text": "Ils régneront sur toute la terre", "correct": false}
+        ]
+      }
+    ]
   },
   "8–14 septembre | D&A 98–101": {
     "jour1": [],
