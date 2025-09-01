@@ -77,6 +77,85 @@
       background-color: #fff;
     }
 
+    /* ===== NOUVELLES ANIMATIONS ===== */
+    
+    /* Animation slide-in depuis la droite + fade-in */
+    @keyframes slideInFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Animation fade-in simple */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* Classes d'animation */
+    .question-enter {
+      animation: slideInFadeIn 0.6s ease forwards;
+    }
+
+    .answers-enter {
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    /* Transition fluide pour changement de question */
+    #quiz-area {
+      transition: opacity 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    /* Barre de progression */
+    #progress-container {
+      margin: 1.5rem 0;
+      text-align: center;
+      display: none;
+    }
+
+    .progress-label {
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .progress-bar-container {
+      position: relative;
+      width: 100%;
+      height: 20px;
+      background-color: #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    #progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary-color), var(--success-color));
+      border-radius: 10px;
+      transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 4px rgba(0,90,148,0.3);
+    }
+
+    .progress-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.8rem;
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    }
+
     /* Mode révision */
     #quiz-mode-info {
       text-align: center;
@@ -95,11 +174,13 @@
       cursor: pointer;
       font-size: 1rem;
       margin: 0.5rem;
-      transition: background-color 0.3s;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .revision-btn:hover {
       background-color: #D97706;
+      transform: translateY(-1px) scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
 
     /* Bouton Statistiques */
@@ -117,11 +198,13 @@
       border-radius: var(--border-radius);
       cursor: pointer;
       font-size: 1rem;
-      transition: background-color 0.3s;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .stats-btn:hover {
       background-color: #004374;
+      transform: translateY(-1px) scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
 
     /* Section Statistiques */
@@ -238,10 +321,6 @@
       background-color: #DC2626;
     }
 
-    #quiz-area {
-      margin-top: 2rem;
-    }
-
     #quiz-area.hidden {
       display: none;
     }
@@ -252,6 +331,7 @@
       margin-bottom: 1rem;
     }
 
+    /* Animations des boutons améliorées */
     .answer-btn {
       display: block;
       width: 100%;
@@ -262,11 +342,15 @@
       border: 2px solid transparent;
       background-color: #f3f4f6;
       cursor: pointer;
-      transition: background-color 0.3s, border-color 0.3s;
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .answer-btn:hover:not(:disabled) {
-      background-color: #e5e7eb;
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 16px rgba(0,90,148,0.2);
+      background-color: var(--accent-color);
       border-color: var(--primary-color);
     }
 
@@ -294,11 +378,13 @@
       border-radius: var(--border-radius);
       cursor: pointer;
       margin-top: 1rem;
-      transition: background-color 0.3s;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     #next-btn:hover {
       background-color: #004374;
+      transform: translateY(-1px) scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     }
 
     /* Styles pour les boutons de partage */
@@ -408,10 +494,13 @@
       font-weight: bold;
       font-size: 1.1rem;
     }
+
+    /* NOUVEAU: Style pour le score avec transition de couleur */
     #score {
       margin-top: 1rem;
       font-weight: bold;
       font-size: 1.1rem;
+      transition: color 0.5s ease;
     }
 
     /* Nouvelle classe pour l'animation de fin */
@@ -620,8 +709,17 @@
       <select id="day-selector"></select>
     </div>
 
-    <!-- NOUVEAU: Indicateur du mode actuel -->
+    <!-- Indicateur du mode actuel -->
     <p id="quiz-mode-info"></p>
+
+    <!-- NOUVELLE BARRE DE PROGRESSION -->
+    <div id="progress-container">
+      <div class="progress-label">Progression du quiz</div>
+      <div class="progress-bar-container">
+        <div id="progress-bar"></div>
+        <span class="progress-text"><span id="current-progress">0</span>/<span id="total-progress">0</span></span>
+      </div>
+    </div>
 
     <div id="quiz-area" class="hidden">
       <div id="question"></div>
@@ -675,10 +773,10 @@
     let currentQuestionIndex;
     let score = 0;
 
-    // NOUVEAU: Variables pour le mode révision
+    // Variables pour le mode révision
     let revisionQuestions = [];
     let isRevisionMode = false;
-    let originalQuestions = []; // Sauvegarde des questions originales
+    let originalQuestions = [];
 
     // Gestion des statistiques
     let stats = {
@@ -688,6 +786,35 @@
       bestScore: 0,
       perfectScores: 0
     };
+
+    // NOUVELLE FONCTION: Couleurs adaptatives pour le score
+    function updateScoreColor() {
+      const totalQuestions = currentQuestions.length;
+      if (totalQuestions === 0) return;
+
+      const percentage = (score / totalQuestions) * 100;
+      
+      if (percentage >= 90) {
+        scoreElement.style.color = '#10B981'; // 🟢 Vert pour excellent (90%+)
+      } else if (percentage >= 70) {
+        scoreElement.style.color = '#3B82F6'; // 🔵 Bleu pour bon (70-89%)
+      } else if (percentage >= 50) {
+        scoreElement.style.color = '#F59E0B'; // 🟡 Orange pour moyen (50-69%)
+      } else {
+        scoreElement.style.color = '#EF4444'; // 🔴 Rouge pour faible (0-49%)
+      }
+    }
+
+    // FONCTION MODIFIÉE: Mettre à jour la barre de progression
+    function updateProgress() {
+      const totalQuestions = currentQuestions.length;
+      const answeredQuestions = totalQuestions - availableQuestions.length;
+      const percentage = totalQuestions > 0 ? (answeredQuestions / totalQuestions) * 100 : 0;
+      
+      document.getElementById('progress-bar').style.width = percentage + '%';
+      document.getElementById('current-progress').textContent = answeredQuestions;
+      document.getElementById('total-progress').textContent = totalQuestions;
+    }
 
     // Charger les statistiques du localStorage
     function loadStats() {
@@ -809,7 +936,7 @@
       }
     });
 
-    // NOUVEAU: Démarrer le mode révision
+    // Démarrer le mode révision
     function startRevisionMode() {
       if (revisionQuestions.length === 0) {
         alert('🎉 Parfait ! Aucune question à revoir. Toutes vos réponses étaient correctes !');
@@ -819,9 +946,10 @@
       isRevisionMode = true;
       currentQuestions = [...revisionQuestions];
       availableQuestions = [...revisionQuestions];
-      revisionQuestions = []; // Vider pour ce nouveau tour
+      revisionQuestions = [];
       score = 0;
       scoreElement.textContent = 'Score : 0';
+      updateScoreColor(); // Réinitialiser la couleur
       
       quizModeInfo.innerHTML = '🔄 <strong>Mode Révision</strong> : Travaillez les questions où vous avez fait des erreurs';
       
@@ -831,48 +959,45 @@
       showNextQuestion();
     }
 
-   async function loadQuestions() {
-  try {
-    const response = await fetch('./questions.json');
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-    allData = await response.json();
-    populateWeekSelector();
-    
-    // Nouvelle variable pour la semaine à sélectionner automatiquement
-    const currentWeek = "1–7 septembre | D&A 94–97"; // ← Corrigé
-    const weekKeys = Object.keys(allData);
-    const currentWeekIndex = weekKeys.indexOf(currentWeek);
-    
-    // Sélectionne automatiquement la semaine si elle existe, sinon la première
-    if (currentWeekIndex !== -1) {
-      weekSelector.selectedIndex = currentWeekIndex;
-    } else {
-      weekSelector.selectedIndex = 0;
+    async function loadQuestions() {
+      try {
+        const response = await fetch('./questions.json');
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        allData = await response.json();
+        populateWeekSelector();
+        
+        // Semaine à sélectionner automatiquement
+        const currentWeek = "1–7 septembre | D&A 94–97";
+        const weekKeys = Object.keys(allData);
+        const currentWeekIndex = weekKeys.indexOf(currentWeek);
+        
+        if (currentWeekIndex !== -1) {
+          weekSelector.selectedIndex = currentWeekIndex;
+        } else {
+          weekSelector.selectedIndex = 0;
+        }
+        
+        handleWeekChange();
+        if (daySelector.options.length > 0) {
+          daySelector.selectedIndex = 0;
+          handleDayChange();
+        }
+        loadStats();
+      } catch (error) {
+        console.error("Erreur lors du chargement du fichier de questions:", error);
+        questionElement.innerText = "Impossible de charger les questions.";
+      }
     }
-    
-    // Appelle l'affichage du jour
-    handleWeekChange();
-    // Sélectionne automatiquement le premier jour disponible
-    if (daySelector.options.length > 0) {
-      daySelector.selectedIndex = 0;
-      handleDayChange();
-    }
-    loadStats();
-  } catch (error) {
-    console.error("Erreur lors du chargement du fichier de questions:", error);
-    questionElement.innerText = "Impossible de charger les questions.";
-  }
-}
 
-function populateWeekSelector() {
-  weekSelector.innerHTML = '';
-  Object.keys(allData).forEach(week => {
-    const option = document.createElement('option');
-    option.value = week;
-    option.innerText = week;
-    weekSelector.appendChild(option);
-  });
-}
+    function populateWeekSelector() {
+      weekSelector.innerHTML = '';
+      Object.keys(allData).forEach(week => {
+        const option = document.createElement('option');
+        option.value = week;
+        option.innerText = week;
+        weekSelector.appendChild(option);
+      });
+    }
 
     function populateDaySelector(weekData) {
       daySelector.innerHTML = '';
@@ -909,12 +1034,16 @@ function populateWeekSelector() {
       const oldStudyLinks = document.querySelector('.study-links');
       if (oldStudyLinks) oldStudyLinks.remove();
 
+      // Remettre à zéro les infos du mode révision
+      isRevisionMode = false;
+      revisionQuestions = [];
+
       const selectedWeek = weekSelector.value;
       const selectedDay = daySelector.value;
 
       if (selectedWeek && selectedDay && allData[selectedWeek][selectedDay]) {
         currentQuestions = allData[selectedWeek][selectedDay];
-        originalQuestions = [...currentQuestions]; // Sauvegarder l'original
+        originalQuestions = [...currentQuestions];
         startQuiz();
       } else {
         quizArea.classList.add('hidden');
@@ -929,6 +1058,7 @@ function populateWeekSelector() {
       return array;
     }
 
+    // FONCTION MODIFIÉE: startQuiz avec barre de progression
     function startQuiz() {
       isRevisionMode = false;
       revisionQuestions = [];
@@ -936,6 +1066,7 @@ function populateWeekSelector() {
       
       if (currentQuestions.length === 0) {
         quizArea.classList.remove('hidden');
+        document.getElementById('progress-container').style.display = 'none';
         questionElement.innerText = "Il n'y a pas de questions pour ce jour.";
         answerButtonsElement.innerHTML = '';
         feedbackElement.innerText = '';
@@ -945,6 +1076,7 @@ function populateWeekSelector() {
       }
 
       quizArea.classList.remove('hidden');
+      document.getElementById('progress-container').style.display = 'block';
       availableQuestions = [...currentQuestions];
       feedbackElement.innerText = '';
       nextButton.innerText = "Question suivante";
@@ -952,6 +1084,10 @@ function populateWeekSelector() {
       shareButtons.style.display = 'none';
       score = 0;
       scoreElement.innerText = 'Score : ' + score;
+      updateScoreColor(); // Couleur initiale
+      
+      // Initialiser la progression
+      updateProgress();
       showNextQuestion();
     }
 
@@ -1035,25 +1171,43 @@ function populateWeekSelector() {
       }
     }
 
+    // FONCTION MODIFIÉE: showQuestion avec animations
     function showQuestion(question) {
-      questionElement.innerText = question.question;
-      answerButtonsElement.innerHTML = '';
-      feedbackElement.innerText = '';
-      nextButton.style.display = 'none';
-      shareButtons.style.display = 'none';
+      // Fade out temporaire
+      quizArea.style.opacity = '0.7';
+      
+      setTimeout(() => {
+        questionElement.innerText = question.question;
+        answerButtonsElement.innerHTML = '';
+        feedbackElement.innerText = '';
+        nextButton.style.display = 'none';
+        shareButtons.style.display = 'none';
 
-      const shuffledAnswers = shuffle([...question.answers]);
+        // Ajouter les classes d'animation
+        questionElement.className = 'question-enter';
+        
+        const shuffledAnswers = shuffle([...question.answers]);
+        shuffledAnswers.forEach(answer => {
+          const button = document.createElement('button');
+          button.innerText = answer.text;
+          button.classList.add('answer-btn');
+          if (answer.correct) button.dataset.correct = "true";
+          button.addEventListener('click', selectAnswer);
+          answerButtonsElement.appendChild(button);
+        });
 
-      shuffledAnswers.forEach(answer => {
-        const button = document.createElement('button');
-        button.innerText = answer.text;
-        button.classList.add('answer-btn');
-        if (answer.correct) button.dataset.correct = "true";
-        button.addEventListener('click', selectAnswer);
-        answerButtonsElement.appendChild(button);
-      });
+        // Animation pour les boutons de réponse
+        answerButtonsElement.className = 'answers-enter';
+        
+        // Restaurer l'opacité
+        quizArea.style.opacity = '1';
+        
+        // Mettre à jour la progression
+        updateProgress();
+      }, 200);
     }
 
+    // FONCTION MODIFIÉE: selectAnswer avec couleurs adaptatives
     function selectAnswer(e) {
       const selectedButton = e.target;
       const correct = selectedButton.dataset.correct === "true";
@@ -1074,8 +1228,8 @@ function populateWeekSelector() {
       if (correct) {
         score++;
         scoreElement.innerText = 'Score : ' + score;
+        updateScoreColor(); // 🎨 NOUVEAU: Mettre à jour la couleur!
       } else {
-        // NOUVEAU: Ajouter à la liste de révision si mauvaise réponse
         if (!revisionQuestions.some(q => q.question === currentQuestion.question)) {
           revisionQuestions.push(currentQuestion);
         }
