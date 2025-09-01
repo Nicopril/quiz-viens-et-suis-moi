@@ -831,51 +831,41 @@
       showNextQuestion();
     }
 
-    async function loadQuestions() {
-      try {
-        const response = await fetch('./questions.json');
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        allData = await response.json();
-        populateWeekSelector();
-        
-       // Nouvelle variable pour la semaine à sélectionner automatiquement
-const currentWeek = "25–31 août | D&A 93"; // ← la leçon de la semaine que tu veux par défaut
-
-const weekKeys = Object.keys(allData);
-const currentWeekIndex = weekKeys.indexOf(currentWeek);
-
-// Sélectionne automatiquement la semaine 93 si elle existe, sinon la première
-if (currentWeekIndex !== -1) {
-  weekSelector.selectedIndex = currentWeekIndex;
-} else {
-  weekSelector.selectedIndex = 0;
-}
-
-// Appelle l'affichage du jour
-handleWeekChange();
-
-// Sélectionne automatiquement le premier jour disponible
-if (daySelector.options.length > 0) {
-  daySelector.selectedIndex = 0;
-  handleDayChange();
-}
-
-        loadStats();
-      } catch (error) {
-        console.error("Erreur lors du chargement du fichier de questions:", error);
-        questionElement.innerText = "Impossible de charger les questions.";
-      }
+   async function loadQuestions() {
+  try {
+    const response = await fetch('./questions.json');
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    allData = await response.json();
+    populateWeekSelector();
+    
+    // Nouvelle variable pour la semaine à sélectionner automatiquement
+    const currentWeek = "1–7 septembre | D&A 94–97"; // ← Corrigé
+    const weekKeys = Object.keys(allData);
+    const currentWeekIndex = weekKeys.indexOf(currentWeek);
+    
+    // Sélectionne automatiquement la semaine si elle existe, sinon la première
+    if (currentWeekIndex !== -1) {
+      weekSelector.selectedIndex = currentWeekIndex;
+    } else {
+      weekSelector.selectedIndex = 0;
     }
-
-    function populateWeekSelector() {
-  weekSelector.innerHTML = '';
-
-  // 🔹 Forcer l'ajout de la nouvelle semaine Doctrine et Alliances 93
-  const newWeek = "25–31 août | D&A 93";
-  if (!allData[newWeek]) {
-    allData[newWeek] = { "jour 1": [] }; // crée une entrée vide si elle n’existe pas encore
+    
+    // Appelle l'affichage du jour
+    handleWeekChange();
+    // Sélectionne automatiquement le premier jour disponible
+    if (daySelector.options.length > 0) {
+      daySelector.selectedIndex = 0;
+      handleDayChange();
+    }
+    loadStats();
+  } catch (error) {
+    console.error("Erreur lors du chargement du fichier de questions:", error);
+    questionElement.innerText = "Impossible de charger les questions.";
   }
+}
 
+function populateWeekSelector() {
+  weekSelector.innerHTML = '';
   Object.keys(allData).forEach(week => {
     const option = document.createElement('option');
     option.value = week;
