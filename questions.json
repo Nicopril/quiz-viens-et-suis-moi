@@ -859,20 +859,350 @@
       }
     ]
   },
-  "8–14 septembre | D&A 98–101": {
-    "jour1": [],
-    "jour2": [],
-    "jour3": [],
-    "jour4": [],
-    "jour5": []
-  },
-  "15–21 septembre | D&A 102–105": {
-    "jour1": [],
-    "jour2": [],
-    "jour3": [],
-    "jour4": [],
-    "jour5": []
-  },
+ "8–14 septembre | D&A 98–101": {
+  "jour1": [
+    {
+      "question": "Quelle promesse le Seigneur fait-il concernant nos afflictions (D&A 98:3) ?",
+      "answers": [
+        {"text": "Toutes les afflictions travailleront ensemble pour votre bien", "correct": true},
+        {"text": "Toutes les afflictions cesseront immédiatement", "correct": false},
+        {"text": "Les afflictions ne toucheront que les méchants", "correct": false}
+      ]
+    },
+    {
+      "question": "Selon D&A 98:1, que doivent faire les saints malgré les persécutions ?",
+      "answers": [
+        {"text": "Ne pas craindre, être réconfortés et rendre grâces en toutes choses", "correct": true},
+        {"text": "Fuir vers d'autres terres", "correct": false},
+        {"text": "Se venger de leurs ennemis", "correct": false}
+      ]
+    },
+    {
+      "question": "Que dit D&A 98:10 concernant les dirigeants politiques ?",
+      "answers": [
+        {"text": "Rechercher et soutenir des hommes honnêtes, sages et bons", "correct": true},
+        {"text": "Éviter toute participation politique", "correct": false},
+        {"text": "Soutenir uniquement les membres de l'Église", "correct": false}
+      ]
+    },
+    {
+      "question": "Quel commandement général donne D&A 98:11 ?",
+      "answers": [
+        {"text": "Abandonner tout mal et s'attacher à tout bien", "correct": true},
+        {"text": "Construire des temples partout", "correct": false},
+        {"text": "Prêcher seulement aux saints", "correct": false}
+      ]
+    }
+  ],
+  "jour2": [
+    {
+      "question": "Que commande D&A 98:16 concernant la guerre ?",
+      "answers": [
+        {"text": "Renoncer à la guerre et proclamer la paix", "correct": true},
+        {"text": "Se préparer militairement", "correct": false},
+        {"text": "Attaquer les premiers", "correct": false}
+      ]
+    },
+    {
+      "question": "Selon D&A 98:23-31, que faut-il faire si quelqu'un nous frappe ?",
+      "answers": [
+        {"text": "Le supporter patiemment jusqu'à trois fois, puis l'avertir", "correct": true},
+        {"text": "Riposter immédiatement", "correct": false},
+        {"text": "Fuir sans rien dire", "correct": false}
+      ]
+    },
+    {
+      "question": "Dans D&A 98:39-40, que faut-il faire si notre ennemi se repent ?",
+      "answers": [
+        {"text": "Lui pardonner, peu importe combien de fois il a péché", "correct": true},
+        {"text": "Lui pardonner seulement une fois", "correct": false},
+        {"text": "Ne jamais lui pardonner", "correct": false}
+      ]
+    },
+    {
+      "question": "Que se passe-t-il si l'ennemi ne se repent pas (D&A 98:43-44) ?",
+      "answers": [
+        {"text": "Dieu se chargera de la vengeance", "correct": true},
+        {"text": "Nous devons nous venger nous-mêmes", "correct": false},
+        {"text": "Il n'y aura aucune conséquence", "correct": false}
+      ]
+    }
+  ],
+  "jour3": [
+    {
+      "question": "À qui s'adresse D&A 99 principalement ?",
+      "answers": [
+        {"text": "John Murdock, appelé en mission", "correct": true},
+        {"text": "Joseph Smith", "correct": false},
+        {"text": "Tous les membres de l'Église", "correct": false}
+      ]
+    },
+    {
+      "question": "Que promet le Seigneur concernant la famille de John Murdock (D&A 99:1) ?",
+      "answers": [
+        {"text": "Elle sera bénie et en sécurité pendant sa mission", "correct": true},
+        {"text": "Elle deviendra riche", "correct": false},
+        {"text": "Elle déménagera dans une autre ville", "correct": false}
+      ]
+    },
+    {
+      "question": "D&A 100 réconforte Joseph Smith et Sidney Rigdon. Quelle était leur préoccupation ?",
+      "answers": [
+        {"text": "Le bien-être de leurs familles pendant leur mission", "correct": true},
+        {"text": "Les finances de l'Église", "correct": false},
+        {"text": "La construction du temple", "correct": false}
+      ]
+    },
+    {
+      "question": "Que promet le Seigneur dans D&A 100:1 ?",
+      "answers": [
+        {"text": "Leurs familles vivent et sont entre ses mains", "correct": true},
+        {"text": "Leur mission sera courte", "correct": false},
+        {"text": "Ils n'auront aucune difficulté", "correct": false}
+      ]
+    }
+  ],
+  "jour4": [
+    {
+      "question": "Selon D&A 100:5-6, comment les missionnaires doivent-ils prêcher ?",
+      "answers": [
+        {"text": "Par l'Esprit, et l'Esprit leur enseignera quoi dire", "correct": true},
+        {"text": "En récitant des discours préparés", "correct": false},
+        {"text": "En utilisant uniquement la Bible", "correct": false}
+      ]
+    },
+    {
+      "question": "Que révèle D&A 100:9-11 sur les œuvres des ténèbres ?",
+      "answers": [
+        {"text": "Elles seront secouées et le royaume de Dieu triomphera", "correct": true},
+        {"text": "Elles vaincront temporairement", "correct": false},
+        {"text": "Elles n'affecteront pas l'Église", "correct": false}
+      ]
+    },
+    {
+      "question": "Dans la parabole de D&A 101:43-62, que représente le noble homme ?",
+      "answers": [
+        {"text": "Le Seigneur", "correct": true},
+        {"text": "Joseph Smith", "correct": false},
+        {"text": "Les dirigeants de l'Église", "correct": false}
+      ]
+    },
+    {
+      "question": "Dans cette parabole, que représente le terrain choisi ?",
+      "answers": [
+        {"text": "Sion (le comté de Jackson, Missouri)", "correct": true},
+        {"text": "Kirtland, Ohio", "correct": false},
+        {"text": "Nauvoo, Illinois", "correct": false}
+      ]
+    }
+  ],
+  "jour5": [
+    {
+      "question": "Dans la parabole, pourquoi les serviteurs n'ont-ils pas construit la tour ?",
+      "answers": [
+        {"text": "Ils se disputaient sur l'argent et pensaient que c'était inutile en temps de paix", "correct": true},
+        {"text": "Ils n'avaient pas les matériaux", "correct": false},
+        {"text": "Le noble homme a changé d'avis", "correct": false}
+      ]
+    },
+    {
+      "question": "Que dit D&A 101:16 pour trouver la paix ?",
+      "answers": [
+        {"text": "Soyez tranquilles et sachez que je suis Dieu", "correct": true},
+        {"text": "Fuyez vers les montagnes", "correct": false},
+        {"text": "Rassemblez-vous en grand nombre", "correct": false}
+      ]
+    },
+    {
+      "question": "Selon D&A 101:22-31, que se passera-t-il au millénium ?",
+      "answers": [
+        {"text": "Plus de mort d'enfants, la terre donnera sa force, paix universelle", "correct": true},
+        {"text": "Tous deviendront immortels immédiatement", "correct": false},
+        {"text": "La terre sera détruite et recréée", "correct": false}
+      ]
+    },
+    {
+      "question": "Quel est le message principal de D&A 98-101 ?",
+      "answers": [
+        {"text": "Avoir la patience dans les épreuves et faire confiance au Seigneur", "correct": true},
+        {"text": "Venger toutes les injustices subies", "correct": false},
+        {"text": "Éviter toute forme de conflit", "correct": false}
+      ]
+    }
+  ]
+},
+ "15–21 septembre | D&A 102–105": {
+  "jour1": [
+    {
+      "question": "Quel est le but principal de l'organisation du haut conseil selon D&A 102 ?",
+      "answers": [
+        {"text": "Régler les difficultés importantes qui surviennent dans l'Église", "correct": true},
+        {"text": "Gérer les finances de l'Église", "correct": false},
+        {"text": "Organiser les missions", "correct": false}
+      ]
+    },
+    {
+      "question": "Selon D&A 102:4, selon quelle loi les membres du haut conseil doivent-ils agir ?",
+      "answers": [
+        {"text": "Selon la loi du ciel", "correct": true},
+        {"text": "Selon les lois civiles", "correct": false},
+        {"text": "Selon leur propre sagesse", "correct": false}
+      ]
+    },
+    {
+      "question": "Dans D&A 102:15, quel droit l'accusé a-t-il lors d'un conseil disciplinaire ?",
+      "answers": [
+        {"text": "Le droit à la moitié du conseil comme défenseurs", "correct": true},
+        {"text": "Le droit de choisir ses juges", "correct": false},
+        {"text": "Le droit de refuser le conseil", "correct": false}
+      ]
+    },
+    {
+      "question": "Que dit D&A 102:18 concernant les procédures du conseil ?",
+      "answers": [
+        {"text": "L'accusateur et l'accusé ont le privilège de parler pour eux-mêmes", "correct": true},
+        {"text": "Seuls les dirigeants peuvent parler", "correct": false},
+        {"text": "Les témoins ne sont pas autorisés", "correct": false}
+      ]
+    }
+  ],
+  "jour2": [
+    {
+      "question": "Selon D&A 103:1, quel sentiment le Seigneur éprouve-t-il pour les afflictions de son peuple ?",
+      "answers": [
+        {"text": "Ses entrailles sont émues de compassion", "correct": true},
+        {"text": "Il est indifférent à leurs souffrances", "correct": false},
+        {"text": "Il est en colère contre eux", "correct": false}
+      ]
+    },
+    {
+      "question": "Que dit D&A 103:5-7 à propos des épreuves ?",
+      "answers": [
+        {"text": "Celui qui n'a pas été châtié ne peut être sanctifié", "correct": true},
+        {"text": "Les épreuves sont une punition pour les péchés", "correct": false},
+        {"text": "Il faut éviter toute épreuve", "correct": false}
+      ]
+    },
+    {
+      "question": "Combien d'hommes le Seigneur demande-t-il de rassembler pour le Camp de Sion (D&A 103:30) ?",
+      "answers": [
+        {"text": "Cinq cents hommes", "correct": true},
+        {"text": "Mille hommes", "correct": false},
+        {"text": "Cent hommes", "correct": false}
+      ]
+    },
+    {
+      "question": "Que promet D&A 103:12 après les tribulations ?",
+      "answers": [
+        {"text": "Viennent les bénédictions", "correct": true},
+        {"text": "Vient la vengeance", "correct": false},
+        {"text": "Vient la fin du monde", "correct": false}
+      ]
+    }
+  ],
+  "jour3": [
+    {
+      "question": "Quel principe financier important D&A 104:13-18 enseigne-t-il ?",
+      "answers": [
+        {"text": "La terre est au Seigneur et il en a fait l'homme intendant", "correct": true},
+        {"text": "Chacun peut garder ce qu'il possède", "correct": false},
+        {"text": "Il faut vendre tous ses biens", "correct": false}
+      ]
+    },
+    {
+      "question": "Selon D&A 104:15-16, quel est le but de l'abondance ?",
+      "answers": [
+        {"text": "Subvenir aux besoins des pauvres et des nécessiteux", "correct": true},
+        {"text": "Accumuler des richesses personnelles", "correct": false},
+        {"text": "Construire de grandes maisons", "correct": false}
+      ]
+    },
+    {
+      "question": "Que promet le Seigneur à ceux qui sont fidèles dans D&A 104:78 ?",
+      "answers": [
+        {"text": "Une multiplicité de bénédictions", "correct": true},
+        {"text": "Une vie sans épreuve", "correct": false},
+        {"text": "Des richesses immédiates", "correct": false}
+      ]
+    },
+    {
+      "question": "D&A 104:82 donne un conseil sur l'orgueil. Lequel ?",
+      "answers": [
+        {"text": "Soyez humbles et le Seigneur vous donnera la sagesse", "correct": true},
+        {"text": "L'orgueil est nécessaire pour réussir", "correct": false},
+        {"text": "Il faut cacher son orgueil", "correct": false}
+      ]
+    }
+  ],
+  "jour4": [
+    {
+      "question": "Pourquoi le Seigneur dit-il que Sion n'a pas pu être rachetée (D&A 105:2-3) ?",
+      "answers": [
+        {"text": "À cause des transgressions de son peuple", "correct": true},
+        {"text": "Par manque d'argent", "correct": false},
+        {"text": "À cause des ennemis trop nombreux", "correct": false}
+      ]
+    },
+    {
+      "question": "Selon D&A 105:4, qu'est-ce qui manquait aux saints pour établir Sion ?",
+      "answers": [
+        {"text": "Ils n'étaient pas unis selon l'union requise par la loi du royaume céleste", "correct": true},
+        {"text": "Ils manquaient de courage", "correct": false},
+        {"text": "Ils n'avaient pas assez de nourriture", "correct": false}
+      ]
+    },
+    {
+      "question": "Que commande le Seigneur aux membres du Camp de Sion (D&A 105:24) ?",
+      "answers": [
+        {"text": "Attendre jusqu'à ce qu'ils soient dotés de puissance d'en haut", "correct": true},
+        {"text": "Attaquer immédiatement", "correct": false},
+        {"text": "Rentrer chez eux sans attendre", "correct": false}
+      ]
+    },
+    {
+      "question": "Quel conseil D&A 105:38-40 donne-t-il pour la paix ?",
+      "answers": [
+        {"text": "Chercher diligemment à faire la paix avec leurs ennemis", "correct": true},
+        {"text": "Éviter tout contact avec les ennemis", "correct": false},
+        {"text": "Se préparer à la guerre", "correct": false}
+      ]
+    }
+  ],
+  "jour5": [
+    {
+      "question": "Quelle grande leçon le Camp de Sion a-t-il enseignée à ses participants ?",
+      "answers": [
+        {"text": "L'obéissance aux commandements même quand on ne comprend pas tout", "correct": true},
+        {"text": "Il faut toujours obtenir ce qu'on veut", "correct": false},
+        {"text": "La force physique est plus importante que la foi", "correct": false}
+      ]
+    },
+    {
+      "question": "Selon l'histoire du Camp de Sion, quel fut le véritable succès de cette expédition ?",
+      "answers": [
+        {"text": "Former et tester de futurs dirigeants de l'Église", "correct": true},
+        {"text": "Reconquérir les terres du Missouri", "correct": false},
+        {"text": "Accumuler des richesses", "correct": false}
+      ]
+    },
+    {
+      "question": "Que nous enseigne D&A 103:36 sur l'attitude à avoir dans les épreuves ?",
+      "answers": [
+        {"text": "Soyez patients dans les afflictions car elles ne dureront qu'un petit moment", "correct": true},
+        {"text": "Fuyez toutes les difficultés", "correct": false},
+        {"text": "Vengez-vous de ceux qui vous persécutent", "correct": false}
+      ]
+    },
+    {
+      "question": "Quel est le message principal de D&A 102-105 pour nous aujourd'hui ?",
+      "answers": [
+        {"text": "Après beaucoup de tribulations viennent les bénédictions", "correct": true},
+        {"text": "Il faut éviter toute épreuve dans la vie", "correct": false},
+        {"text": "Seuls les parfaits recevront des bénédictions", "correct": false}
+      ]
+    }
+  ]
+},
   "22–28 septembre | D&A 106–108": {
     "jour1": [],
     "jour2": [],
