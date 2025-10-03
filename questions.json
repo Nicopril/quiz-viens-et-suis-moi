@@ -1204,18 +1204,349 @@
   ]
 },
   "22–28 septembre | D&A 106–108": {
-    "jour1": [],
-    "jour2": [],
-    "jour3": [],
-    "jour4": [],
-    "jour5": []
+    "jour1": [
+      {
+        "question": "Selon D&A 106:1-3, quelle responsabilité le Seigneur confie-t-il à Warren Cowdery ?",
+        "answers": [
+          {"text": "Veiller sur l'Église à Freedom et proclamer l'Évangile", "correct": true},
+          {"text": "Organiser une compagnie commerciale dans le Missouri", "correct": false},
+          {"text": "Superviser la construction du temple de Kirtland", "correct": false}
+        ]
+      },
+      {
+        "question": "Que nous apprend D&A 106:4-5 sur la venue du Seigneur ?",
+        "answers": [
+          {"text": "Elle surprendra ceux qui ne veillent pas, comme un voleur dans la nuit", "correct": true},
+          {"text": "Elle sera annoncée par un décret du gouvernement", "correct": false},
+          {"text": "Elle ne viendra qu'après que tous auront été convertis", "correct": false}
+        ]
+      },
+      {
+        "question": "Quelle promesse le Seigneur donne-t-il concernant la maison de Warren Cowdery (D&A 106:6-8) ?",
+        "answers": [
+          {"text": "Sa maison sera bénie s'ils demeurent fidèles", "correct": true},
+          {"text": "Ils seront transportés immédiatement à Kirtland", "correct": false},
+          {"text": "Ils recevront des richesses temporelles garanties", "correct": false}
+        ]
+      },
+      {
+        "question": "Quel conseil personnel le Seigneur donne-t-il à Warren Cowdery dans D&A 106:7 ?",
+        "answers": [
+          {"text": "Sois humble et demeure fidèle, et je te soutiendrai", "correct": true},
+          {"text": "Prends du repos et laisse d'autres servir à ta place", "correct": false},
+          {"text": "Cherche d'abord des honneurs politiques", "correct": false}
+        ]
+      }
+    ],
+    "jour2": [
+      {
+        "question": "Pourquoi le sacerdoce supérieur porte-t-il le nom de Melchisédek selon D&A 107:2-4 ?",
+        "answers": [
+          {"text": "Pour honorer le grand prêtre Melchisédek et éviter de répéter trop souvent le nom de Dieu", "correct": true},
+          {"text": "Parce que Melchisédek fut le premier à recevoir le sacerdoce d'Aaron", "correct": false},
+          {"text": "Parce que Melchisédek était un lévite", "correct": false}
+        ]
+      },
+      {
+        "question": "Quel pouvoir principal le sacerdoce de Melchisédek détient-il (D&A 107:8) ?",
+        "answers": [
+          {"text": "Le pouvoir de présider l'Église et d'administrer toutes ses ordonnances", "correct": true},
+          {"text": "Seulement le pouvoir de baptiser", "correct": false},
+          {"text": "Uniquement le pouvoir de diriger les réunions de jeûne", "correct": false}
+        ]
+      },
+      {
+        "question": "Quelles clés détient le sacerdoce d'Aaron selon D&A 107:13-14 ?",
+        "answers": [
+          {"text": "Les clés du ministère des anges, de l'Évangile de repentance et du baptême", "correct": true},
+          {"text": "Les clés de la création du monde", "correct": false},
+          {"text": "Les clés du scellement éternel", "correct": false}
+        ]
+      },
+      {
+        "question": "Quel office préside le sacerdoce d'Aaron (D&A 107:15-17) ?",
+        "answers": [
+          {"text": "L'évêque, qui est juge commun en Israël", "correct": true},
+          {"text": "Le patriarche de chaque famille", "correct": false},
+          {"text": "Le président du conseil des soixante-dix", "correct": false}
+        ]
+      }
+    ],
+    "jour3": [
+      {
+        "question": "Selon D&A 107:22-24, comment la Première Présidence et le Quorum des Douze se comparent-ils ?",
+        "answers": [
+          {"text": "Les Douze apôtres sont égaux en autorité avec la Première Présidence comme témoins spéciaux", "correct": true},
+          {"text": "Les Douze servent uniquement dans leurs branches locales", "correct": false},
+          {"text": "Les Douze sont subordonnés aux soixante-dix en toute chose", "correct": false}
+        ]
+      },
+      {
+        "question": "Quel devoir particulier est donné aux Douze dans D&A 107:23 ?",
+        "answers": [
+          {"text": "Être témoins spéciaux du nom de Christ dans tout le monde", "correct": true},
+          {"text": "Administrer les finances de l'Église", "correct": false},
+          {"text": "Traduire toutes les Écritures en anglais moderne", "correct": false}
+        ]
+      },
+      {
+        "question": "Que décrit D&A 107:25-26 au sujet du grand conseil des douze grands prêtres ?",
+        "answers": [
+          {"text": "Ils forment un quorum qui juge les affaires les plus importantes de l'Église", "correct": true},
+          {"text": "Ils organisent les mariages civils", "correct": false},
+          {"text": "Ils remplacent la Première Présidence", "correct": false}
+        ]
+      },
+      {
+        "question": "Quelle responsabilité les soixante-dix reçoivent-ils selon D&A 107:34-35 ?",
+        "answers": [
+          {"text": "Prêcher l'Évangile sous la direction des Douze dans le monde entier", "correct": true},
+          {"text": "Administrer exclusivement les temples", "correct": false},
+          {"text": "Superviser les paroisses locales à plein temps", "correct": false}
+        ]
+      }
+    ],
+    "jour4": [
+      {
+        "question": "Quel principe D&A 107:99 enseigne-t-il à ceux qui reçoivent un appel ?",
+        "answers": [
+          {"text": "S'efforcer diligemment d'apprendre et d'accomplir son devoir", "correct": true},
+          {"text": "Attendre des instructions détaillées avant d'agir", "correct": false},
+          {"text": "Déléguer immédiatement la responsabilité à quelqu'un d'autre", "correct": false}
+        ]
+      },
+      {
+        "question": "Selon D&A 107:100, que se passe-t-il si quelqu'un néglige son appel ?",
+        "answers": [
+          {"text": "Il ne sera pas estimé et n'aura pas l'Esprit", "correct": true},
+          {"text": "Il sera libéré sans conséquence", "correct": false},
+          {"text": "Il recevra automatiquement un appel plus facile", "correct": false}
+        ]
+      },
+      {
+        "question": "Quel réconfort le Seigneur offre-t-il à Lyman Sherman dans D&A 108:1 ?",
+        "answers": [
+          {"text": "Ton péché t'est pardonné parce que tu t'es humilié", "correct": true},
+          {"text": "Tu dois quitter l'Église immédiatement", "correct": false},
+          {"text": "Tu ne recevras plus aucune révélation", "correct": false}
+        ]
+      },
+      {
+        "question": "Quel devoir D&A 108:7-8 donne-t-il à Lyman Sherman ?",
+        "answers": [
+          {"text": "Annoncer l'Évangile, prier avec foi et fortifier ses frères", "correct": true},
+          {"text": "Retourner à la ferme et s'y consacrer entièrement", "correct": false},
+          {"text": "Chercher des honneurs politiques dans la ville", "correct": false}
+        ]
+      }
+    ],
+    "jour5": [
+      {
+        "question": "Quel thème commun relie D&A 106 et 108 concernant le service local ?",
+        "answers": [
+          {"text": "Servir humblement pour fortifier les saints dans sa région", "correct": true},
+          {"text": "Se retirer complètement du monde", "correct": false},
+          {"text": "Rechercher d'abord les honneurs personnels", "correct": false}
+        ]
+      },
+      {
+        "question": "Selon D&A 107, pourquoi l'ordre du sacerdoce est-il essentiel ?",
+        "answers": [
+          {"text": "Afin que toutes choses soient faites en ordre et sous inspiration", "correct": true},
+          {"text": "Pour concentrer tout pouvoir sur une seule personne", "correct": false},
+          {"text": "Pour éviter toute activité missionnaire", "correct": false}
+        ]
+      },
+      {
+        "question": "Comment D&A 106:4-6 nous invite-t-il à nous préparer à la venue du Seigneur ?",
+        "answers": [
+          {"text": "En veillant comme des enfants de lumière", "correct": true},
+          {"text": "En calculant la date précise de son retour", "correct": false},
+          {"text": "En comptant sur la protection du gouvernement", "correct": false}
+        ]
+      },
+      {
+        "question": "Quel engagement personnel ressort de D&A 108:7-8 pour chaque disciple ?",
+        "answers": [
+          {"text": "Chercher l'Esprit par la prière et fortifier nos frères", "correct": true},
+          {"text": "Éviter toute responsabilité publique", "correct": false},
+          {"text": "Rechercher avant tout la prospérité matérielle", "correct": false}
+        ]
+      }
+    ]
   },
+
   "29 sept.–5 oct. | D&A 109–110": {
-    "jour1": [],
-    "jour2": [],
-    "jour3": [],
-    "jour4": [],
-    "jour5": []
+    "jour1": [
+      {
+        "question": "Quel engagement le Seigneur demande dans D&A 109:8 pour la maison du Seigneur ?",
+        "answers": [
+          {"text": "L'organiser comme une maison de prière, de jeûne, de foi, d'apprentissage et de gloire", "correct": true},
+          {"text": "La réserver aux réunions politiques", "correct": false},
+          {"text": "La fermer au grand public", "correct": false}
+        ]
+      },
+      {
+        "question": "Dans D&A 109:12-13, quelle bénédiction est recherchée pour le temple de Kirtland ?",
+        "answers": [
+          {"text": "Que la gloire du Seigneur repose sur tous ceux qui y adorent", "correct": true},
+          {"text": "Que le temple devienne un centre commercial", "correct": false},
+          {"text": "Que seules les autorités civiles y entrent", "correct": false}
+        ]
+      },
+      {
+        "question": "Que demande D&A 109:14-15 pour ceux qui sortent du temple ?",
+        "answers": [
+          {"text": "Qu'ils sortent armés de la puissance de Dieu et portent son nom", "correct": true},
+          {"text": "Qu'ils renoncent à toute prédication extérieure", "correct": false},
+          {"text": "Qu'ils demeurent confinés à Kirtland", "correct": false}
+        ]
+      },
+      {
+        "question": "Selon D&A 109:20-21, quelle condition est donnée pour entrer dans la maison du Seigneur ?",
+        "answers": [
+          {"text": "Se purifier et ne pas y introduire d'impureté", "correct": true},
+          {"text": "Être propriétaire foncier dans la ville", "correct": false},
+          {"text": "Payer un droit d'entrée élevé", "correct": false}
+        ]
+      }
+    ],
+    "jour2": [
+      {
+        "question": "Quelle promesse D&A 109:22-23 offre-t-il aux missionnaires qui partent du temple ?",
+        "answers": [
+          {"text": "Ils sortiront armés de puissance et aucune arme forgée contre eux ne prospérera", "correct": true},
+          {"text": "Ils n'auront plus besoin de prier", "correct": false},
+          {"text": "Ils seront relevés de toutes leurs obligations familiales", "correct": false}
+        ]
+      },
+      {
+        "question": "Que demande D&A 109:24-28 pour les familles des missionnaires ?",
+        "answers": [
+          {"text": "Que les anges les entourent et que leurs foyers soient bénis", "correct": true},
+          {"text": "Qu'elles soient déplacées définitivement à Kirtland", "correct": false},
+          {"text": "Qu'elles cessent toute participation à l'Église", "correct": false}
+        ]
+      },
+      {
+        "question": "Comment D&A 109:29-30 traite-t-il les dettes du peuple ?",
+        "answers": [
+          {"text": "Il demande au Seigneur de les délivrer de la dette et d'adoucir le cœur de leurs créanciers", "correct": true},
+          {"text": "Il encourage les saints à ignorer leurs engagements financiers", "correct": false},
+          {"text": "Il commande de contracter davantage de dettes pour construire d'autres temples", "correct": false}
+        ]
+      },
+      {
+        "question": "Que demande la prière concernant ceux qui attaquent l'Église (D&A 109:32-33) ?",
+        "answers": [
+          {"text": "Qu'ils soient confondus et que leurs mensonges échouent", "correct": true},
+          {"text": "Qu'ils soient immédiatement détruits", "correct": false},
+          {"text": "Qu'ils dirigent l'Église pour un temps", "correct": false}
+        ]
+      }
+    ],
+    "jour3": [
+      {
+        "question": "Selon D&A 109:36-37, que demande-t-on pour Sion ?",
+        "answers": [
+          {"text": "Qu'elle soit délivrée et que la justice la couvre", "correct": true},
+          {"text": "Qu'elle abandonne l'œuvre missionnaire", "correct": false},
+          {"text": "Qu'elle se fonde entièrement sur la protection militaire", "correct": false}
+        ]
+      },
+      {
+        "question": "Que demande D&A 109:54-57 pour les dirigeants de la nation ?",
+        "answers": [
+          {"text": "Qu'ils soient remplis de l'esprit de liberté et soutiennent la Constitution", "correct": true},
+          {"text": "Qu'ils imposent la religion par la loi", "correct": false},
+          {"text": "Qu'ils empêchent toute réunion religieuse", "correct": false}
+        ]
+      },
+      {
+        "question": "Quelle bénédiction D&A 109:62-64 recherche-t-il pour le rassemblement d'Israël ?",
+        "answers": [
+          {"text": "Que les tribus soient réunies et reçoivent l'Évangile", "correct": true},
+          {"text": "Que les tribus restent dispersées sans alliance", "correct": false},
+          {"text": "Que seules les tribus d'Israël soient sauvées", "correct": false}
+        ]
+      },
+      {
+        "question": "Que demande D&A 109:68-70 pour les pauvres et les affligés ?",
+        "answers": [
+          {"text": "Que les pauvres soient exaltés, les riches humiliés et les affligés consolés", "correct": true},
+          {"text": "Que les pauvres soient exclus du temple", "correct": false},
+          {"text": "Que les affligés soient laissés à eux-mêmes", "correct": false}
+        ]
+      }
+    ],
+    "jour4": [
+      {
+        "question": "Qui Joseph Smith et Oliver Cowdery voient-ils dans D&A 110:1-3 ?",
+        "answers": [
+          {"text": "Le Seigneur Jésus-Christ sur un pavement de saphir", "correct": true},
+          {"text": "L'ange Moroni annonçant encore le Livre de Mormon", "correct": false},
+          {"text": "Moïse tenant les tables de la loi", "correct": false}
+        ]
+      },
+      {
+        "question": "Comment le Seigneur se présente-t-il dans D&A 110:4-5 ?",
+        "answers": [
+          {"text": "Comme le Premier et le Dernier, le Rédempteur qui vit", "correct": true},
+          {"text": "Comme un simple messager envoyé par un prophète", "correct": false},
+          {"text": "Comme l'ange qui a gardé le jardin d'Éden", "correct": false}
+        ]
+      },
+      {
+        "question": "Que déclare le Seigneur au sujet du temple dans D&A 110:7 ?",
+        "answers": [
+          {"text": "J'ai accepté cette maison et mon nom y sera", "correct": true},
+          {"text": "Ce lieu doit être transformé en entrepôt", "correct": false},
+          {"text": "Je la laisserai déserte pour un temps indéfini", "correct": false}
+        ]
+      },
+      {
+        "question": "Selon D&A 110:9-10, quel effet aura cette acceptation sur le peuple ?",
+        "answers": [
+          {"text": "La renommée des saints se répandra et les anges les soutiendront", "correct": true},
+          {"text": "Ils devront cesser toute prédication", "correct": false},
+          {"text": "Ils seront libérés de leurs alliances", "correct": false}
+        ]
+      }
+    ],
+    "jour5": [
+      {
+        "question": "Quel prophète remet les clés du rassemblement d'Israël dans D&A 110:11 ?",
+        "answers": [
+          {"text": "Moïse, remettant les clefs du rassemblement d'Israël", "correct": true},
+          {"text": "Noé, remettant les clefs du déluge", "correct": false},
+          {"text": "Abraham, remettant les clefs de la création", "correct": false}
+        ]
+      },
+      {
+        "question": "Quelles bénédictions Élias confère-t-il dans D&A 110:12 ?",
+        "answers": [
+          {"text": "Les bénédictions de l'Évangile d'Abraham", "correct": true},
+          {"text": "Le pouvoir de traduire toutes les langues", "correct": false},
+          {"text": "La clef des dix commandements", "correct": false}
+        ]
+      },
+      {
+        "question": "Quel message Élie apporte-t-il dans D&A 110:13-16 ?",
+        "answers": [
+          {"text": "Les clefs du scellement pour tourner le cœur des pères vers les enfants", "correct": true},
+          {"text": "La fin de toute œuvre au temple", "correct": false},
+          {"text": "La révélation d'un nouveau livre de scripture", "correct": false}
+        ]
+      },
+      {
+        "question": "Quel effet ces clés ont-elles sur l'œuvre du salut pour les vivants et les morts ?",
+        "answers": [
+          {"text": "Elles ouvrent les ordonnances de scellement et l'œuvre du temple pour tous", "correct": true},
+          {"text": "Elles abolissent la nécessité du baptême", "correct": false},
+          {"text": "Elles limitent le salut aux vivants uniquement", "correct": false}
+        ]
+      }
+    ]
   },
   "6–12 octobre | D&A 111–114": {
     "jour1": [],
