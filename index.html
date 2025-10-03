@@ -732,7 +732,10 @@
       
       <div class="share-buttons" id="share-buttons">
         <h3>📱 Partager mon résultat</h3>
-        <div class="share-btn-grid">
+        <button class="share-btn share-native" id="share-native" style="display: none;">
+          📲 Partager
+        </button>
+        <div class="share-btn-grid" id="share-fallback-grid">
           <button class="share-btn share-whatsapp" id="share-whatsapp">
             💬 WhatsApp
           </button>
@@ -790,10 +793,15 @@
     // NOUVELLE FONCTION: Couleurs adaptatives pour le score
     function updateScoreColor() {
       const totalQuestions = currentQuestions.length;
-      if (totalQuestions === 0) return;
+      const answeredQuestions = totalQuestions - availableQuestions.length;
+
+      if (totalQuestions === 0 || answeredQuestions <= 0) {
+        scoreElement.style.color = 'var(--text-color)';
+        return;
+      }
 
       const percentage = (score / totalQuestions) * 100;
-      
+
       if (percentage >= 90) {
         scoreElement.style.color = '#10B981'; // 🟢 Vert pour excellent (90%+)
       } else if (percentage >= 70) {
@@ -808,7 +816,18 @@
     // FONCTION MODIFIÉE: Mettre à jour la barre de progression
     function updateProgress() {
       const totalQuestions = currentQuestions.length;
-      const answeredQuestions = totalQuestions - availableQuestions.length;
+      let answeredQuestions = totalQuestions - availableQuestions.length;
+
+      if (availableQuestions.length === 0 && totalQuestions > 0) {
+        answeredQuestions = totalQuestions;
+      }
+
+      if (answeredQuestions < 0) {
+        answeredQuestions = 0;
+      } else if (answeredQuestions > totalQuestions) {
+        answeredQuestions = totalQuestions;
+      }
+
       const percentage = totalQuestions > 0 ? (answeredQuestions / totalQuestions) * 100 : 0;
       
       document.getElementById('progress-bar').style.width = percentage + '%';
@@ -910,7 +929,7 @@
 
     // Toggle affichage des statistiques
     statsToggleBtn.addEventListener('click', () => {
-      const isVisible = statsSection.style.display !== 'none';
+      const isVisible = getComputedStyle(statsSection).display !== 'none';
       if (isVisible) {
         statsSection.style.display = 'none';
         statsToggleBtn.textContent = '📊 Voir mes statistiques';
@@ -943,6 +962,15 @@
         return;
       }
 
+      const oldEndMsg = document.getElementById('end-message');
+      if (oldEndMsg) {
+        oldEndMsg.remove();
+      }
+      const oldStudyLinks = document.querySelector('.study-links');
+      if (oldStudyLinks) {
+        oldStudyLinks.remove();
+      }
+
       isRevisionMode = true;
       currentQuestions = [...revisionQuestions];
       availableQuestions = [...revisionQuestions];
@@ -966,21 +994,32 @@
         allData = await response.json();
         populateWeekSelector();
         
-        // Semaine à sélectionner automatiquement
-        const currentWeek = "15–21 septembre | D&A 102–105";
         const weekKeys = Object.keys(allData);
-        const currentWeekIndex = weekKeys.indexOf(currentWeek);
-        
-        if (currentWeekIndex !== -1) {
-          weekSelector.selectedIndex = currentWeekIndex;
+
+        if (weekSelector.options.length > 0) {
+          let bestWeekIndex = -1;
+
+          weekKeys.forEach((week, index) => {
+            const weekData = allData[week];
+            const hasQuestions = weekData && Object.values(weekData).some(dayQuestions =>
+              Array.isArray(dayQuestions) && dayQuestions.length > 0
+            );
+
+            if (hasQuestions) {
+              bestWeekIndex = index;
+            }
+          });
+
+          const selectedWeekIndex = bestWeekIndex !== -1 ? bestWeekIndex : 0;
+          weekSelector.selectedIndex = Math.min(selectedWeekIndex, weekSelector.options.length - 1);
+
+          handleWeekChange();
+          if (daySelector.options.length > 0) {
+            daySelector.selectedIndex = 0;
+            handleDayChange();
+          }
         } else {
           weekSelector.selectedIndex = 0;
-        }
-        
-        handleWeekChange();
-        if (daySelector.options.length > 0) {
-          daySelector.selectedIndex = 0;
-          handleDayChange();
         }
         loadStats();
       } catch (error) {
@@ -1060,10 +1099,29 @@
 
     // FONCTION MODIFIÉE: startQuiz avec barre de progression
     function startQuiz() {
+      const oldEndMsg = document.getElementById('end-message');
+      if (oldEndMsg) {
+        oldEndMsg.remove();
+      }
+      const oldStudyLinks = document.querySelector('.study-links');
+      if (oldStudyLinks) {
+        oldStudyLinks.remove();
+      }
+
       isRevisionMode = false;
       revisionQuestions = [];
       quizModeInfo.textContent = '';
-      
+
+      const existingEndMessage = quizArea.querySelector('#end-message');
+      if (existingEndMessage) {
+        existingEndMessage.remove();
+      }
+
+      const existingStudyLinks = quizArea.querySelector('.study-links');
+      if (existingStudyLinks) {
+        existingStudyLinks.remove();
+      }
+
       if (currentQuestions.length === 0) {
         quizArea.classList.remove('hidden');
         document.getElementById('progress-container').style.display = 'none';
@@ -1236,73 +1294,113 @@
       }
 
       availableQuestions.splice(currentQuestionIndex, 1);
+      updateProgress();
     }
 
-    // Génère le texte de partage
-    function generateShareText() {
-      const selectedWeek = weekSelector.value;
-      const selectedDay = daySelector.value;
-      const totalQuestions = currentQuestions.length;
-      
-      let shareText = `🎯 Quiz "Viens et suis-moi" terminé !\n\n`;
-      shareText += `📖 ${selectedWeek} - ${selectedDay.charAt(0).toUpperCase() + selectedDay.slice(1)}\n`;
-      shareText += `✅ Score: ${score}/${totalQuestions}\n\n`;
-      
-      if (score === totalQuestions) {
-        shareText += `🎉 Score parfait ! Je maîtrise cette semaine !\n\n`;
-      } else if (score >= totalQuestions - 1) {
-        shareText += `👏 Presque parfait ! Très bon résultat !\n\n`;
-      } else if (score >= totalQuestions / 2) {
-        shareText += `💪 Bon travail ! Je continue mes efforts !\n\n`;
+    function setupShareFeatures() {
+      const nativeShareButton = document.getElementById('share-native');
+      const fallbackGrid = document.getElementById('share-fallback-grid');
+      const whatsappButton = document.getElementById('share-whatsapp');
+      const twitterButton = document.getElementById('share-twitter');
+      const telegramButton = document.getElementById('share-telegram');
+      const copyButton = document.getElementById('share-copy');
+
+      const capitalize = (text) => text.charAt(0).toUpperCase() + text.slice(1);
+
+      const getShareData = () => {
+        const selectedWeek = weekSelector.value;
+        const selectedDay = daySelector.value;
+        const totalQuestions = currentQuestions.length;
+
+        let shareText = `🎯 Quiz "Viens et suis-moi" terminé !\n\n`;
+        shareText += `📖 ${selectedWeek} - ${capitalize(selectedDay)}\n`;
+        shareText += `✅ Score: ${score}/${totalQuestions}\n\n`;
+
+        if (score === totalQuestions) {
+          shareText += `🎉 Score parfait ! Je maîtrise cette semaine !\n\n`;
+        } else if (score >= totalQuestions - 1) {
+          shareText += `👏 Presque parfait ! Très bon résultat !\n\n`;
+        } else if (score >= totalQuestions / 2) {
+          shareText += `💪 Bon travail ! Je continue mes efforts !\n\n`;
+        } else {
+          shareText += `📚 En progression dans mon étude !\n\n`;
+        }
+
+        shareText += `Rejoignez-moi dans l'étude de Doctrine et Alliances !\n\n`;
+        shareText += `🎥 Approfondissement: https://www.youtube.com/@ecouteetpreteloreille4331\n`;
+        shareText += `📖 Manuel officiel: https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025?lang=fra`;
+
+        return {
+          text: shareText,
+          title: `Résultats du quiz : ${selectedWeek} - ${capitalize(selectedDay)}`
+        };
+      };
+
+      const handleShareFallback = (platform) => {
+        const { text } = getShareData();
+        let url = '';
+
+        switch (platform) {
+          case 'whatsapp':
+            url = `https://wa.me/?text=${encodeURIComponent(text)}`;
+            break;
+          case 'twitter':
+            url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+            break;
+          case 'telegram':
+            url = `https://t.me/share/url?text=${encodeURIComponent(text)}`;
+            break;
+        }
+
+        if (url) {
+          window.open(url, '_blank');
+        }
+      };
+
+      whatsappButton.addEventListener('click', () => handleShareFallback('whatsapp'));
+      twitterButton.addEventListener('click', () => handleShareFallback('twitter'));
+      telegramButton.addEventListener('click', () => handleShareFallback('telegram'));
+
+      copyButton.addEventListener('click', async () => {
+        const { text } = getShareData();
+        try {
+          await navigator.clipboard.writeText(text);
+          const originalText = copyButton.innerHTML;
+          copyButton.innerHTML = '✅ Copié !';
+          copyButton.style.backgroundColor = '#10B981';
+          setTimeout(() => {
+            copyButton.innerHTML = originalText;
+            copyButton.style.backgroundColor = '#6B7280';
+          }, 2000);
+        } catch (err) {
+          alert('Impossible de copier automatiquement. Veuillez sélectionner et copier le texte manuellement.');
+          prompt('Copiez ce texte:', text);
+        }
+      });
+
+      if (navigator.share && nativeShareButton) {
+        nativeShareButton.style.display = 'block';
+        fallbackGrid.style.display = 'none';
+
+        nativeShareButton.addEventListener('click', async () => {
+          try {
+            const { text, title } = getShareData();
+            await navigator.share({ text, title });
+          } catch (error) {
+            if (error && error.name !== 'AbortError') {
+              console.error('Partage natif échoué:', error);
+            }
+          }
+        });
       } else {
-        shareText += `📚 En progression dans mon étude !\n\n`;
+        nativeShareButton.style.display = 'none';
+        fallbackGrid.style.display = 'grid';
       }
-      
-      shareText += `Rejoignez-moi dans l'étude de Doctrine et Alliances !\n\n`;
-      shareText += `🎥 Approfondissement: https://www.youtube.com/@ecouteetpreteloreille4331\n`;
-      shareText += `📖 Manuel officiel: https://www.churchofjesuschrist.org/study/manual/come-follow-me-for-home-and-church-doctrine-and-covenants-2025?lang=fra`;
-      return shareText;
     }
-
-    // Boutons de partage
-    document.getElementById('share-whatsapp').addEventListener('click', () => {
-      const text = generateShareText();
-      const url = `https://wa.me/?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
-    });
-
-    document.getElementById('share-twitter').addEventListener('click', () => {
-      const text = generateShareText();
-      const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
-    });
-
-    document.getElementById('share-telegram').addEventListener('click', () => {
-      const text = generateShareText();
-      const url = `https://t.me/share/url?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
-    });
-
-    document.getElementById('share-copy').addEventListener('click', async () => {
-      const text = generateShareText();
-      try {
-        await navigator.clipboard.writeText(text);
-        const button = document.getElementById('share-copy');
-        const originalText = button.innerHTML;
-        button.innerHTML = '✅ Copié !';
-        button.style.backgroundColor = '#10B981';
-        setTimeout(() => {
-          button.innerHTML = originalText;
-          button.style.backgroundColor = '#6B7280';
-        }, 2000);
-      } catch (err) {
-        alert('Impossible de copier automatiquement. Veuillez sélectionner et copier le texte manuellement.');
-        prompt('Copiez ce texte:', text);
-      }
-    });
 
     weekSelector.addEventListener('change', handleWeekChange);
     daySelector.addEventListener('change', handleDayChange);
+    setupShareFeatures();
     loadQuestions();
   </script>
 </body>
