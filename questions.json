@@ -3520,18 +3520,708 @@
     ]
   },
   "13–19 octobre | D&A 115–120": {
-    "jour1": [],
-    "jour2": [],
-    "jour3": [],
-    "jour4": [],
-    "jour5": []
+    "jour1": [
+      {
+        "question": "Quel nom officiel du Seigneur donne-t-il à l'Église dans D&A 115:4 ?",
+        "answers": [
+          {
+            "text": "L'Église de Jésus-Christ des Saints des Derniers Jours",
+            "correct": true
+          },
+          {
+            "text": "L'Église du Christ de Far West",
+            "correct": false
+          },
+          {
+            "text": "L'Église de Sion des Derniers Jours",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel objectif le Seigneur assigne-t-il au temple de Far West selon D&A 115:8-9 ?",
+        "answers": [
+          {
+            "text": "Préparer un lieu sacré pour recevoir les ordonnances et les révélations",
+            "correct": true
+          },
+          {
+            "text": "Servir uniquement de lieu de rassemblement social",
+            "correct": false
+          },
+          {
+            "text": "Offrir un refuge militaire aux saints",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Dans D&A 115:5, quelle mission le Seigneur confie-t-il à l'Église ?",
+        "answers": [
+          {
+            "text": "Élever une bannière de vérité pour rassembler le peuple du Seigneur",
+            "correct": true
+          },
+          {
+            "text": "S'isoler du monde jusqu'au retour du Christ",
+            "correct": false
+          },
+          {
+            "text": "Fonder des colonies autosuffisantes en dehors de Sion",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que promet le Seigneur aux saints qui obéissent aux instructions de D&A 115:11-12 ?",
+        "answers": [
+          {
+            "text": "Il les fortifiera et leur donnera du pouvoir contre leurs ennemis",
+            "correct": true
+          },
+          {
+            "text": "Ils n'auront plus jamais d'épreuves",
+            "correct": false
+          },
+          {
+            "text": "Ils seront immédiatement délivrés de Missouri",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour2": [
+      {
+        "question": "Quelle identité D&A 116 révèle-t-il pour Spring Hill au Missouri ?",
+        "answers": [
+          {
+            "text": "Adam-ondi-Ahman, lieu d'une future réunion sacrée",
+            "correct": true
+          },
+          {
+            "text": "La Nouvelle Jérusalem déjà consacrée",
+            "correct": false
+          },
+          {
+            "text": "Le site du premier temple de l'Utah",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que reproche le Seigneur à William Marks et à Newel K. Whitney dans D&A 117:1-4 ?",
+        "answers": [
+          {
+            "text": "Leur attachement aux biens matériels de Kirtland",
+            "correct": true
+          },
+          {
+            "text": "Leur manque de formation doctrinale",
+            "correct": false
+          },
+          {
+            "text": "Leur désir de quitter l'Église",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quelle priorité le Seigneur souligne-t-il dans D&A 117:7-8 ?",
+        "answers": [
+          {
+            "text": "Rechercher les richesses de l'éternité plutôt que les richesses de la terre",
+            "correct": true
+          },
+          {
+            "text": "Accumuler des réserves financières pour le voyage à Far West",
+            "correct": false
+          },
+          {
+            "text": "Rester en Ohio jusqu'à nouvel ordre",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 117:13, quelle bénédiction attend Oliver Granger s'il est fidèle ?",
+        "answers": [
+          {
+            "text": "Son nom sera honoré de génération en génération",
+            "correct": true
+          },
+          {
+            "text": "Il deviendra membre de la Première Présidence",
+            "correct": false
+          },
+          {
+            "text": "Il sera exempté de toute épreuve",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour3": [
+      {
+        "question": "Que commande le Seigneur aux Douze Apôtres dans D&A 118:4-5 ?",
+        "answers": [
+          {
+            "text": "Partir de Far West pour prêcher l'Évangile parmi les nations",
+            "correct": true
+          },
+          {
+            "text": "Rester à Far West pour administrer les affaires temporelles",
+            "correct": false
+          },
+          {
+            "text": "Se retirer du ministère jusqu'à la paix",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel moment précis le Seigneur fixe-t-il pour le départ des Douze dans D&A 118:5 ?",
+        "answers": [
+          {
+            "text": "Le 26 avril 1839, depuis le temple de Far West",
+            "correct": true
+          },
+          {
+            "text": "Le 6 avril 1839, lors de la conférence générale",
+            "correct": false
+          },
+          {
+            "text": "Le 24 décembre 1838, avant l'hiver",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 118:6, qui doit pourvoir aux familles des apôtres en mission ?",
+        "answers": [
+          {
+            "text": "Les saints, par leurs prières et leurs offrandes",
+            "correct": true
+          },
+          {
+            "text": "Uniquement les parents proches des apôtres",
+            "correct": false
+          },
+          {
+            "text": "Les autorités civiles du Missouri",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que promet le Seigneur aux Douze s'ils sont fidèles, selon D&A 118:6-7 ?",
+        "answers": [
+          {
+            "text": "Il ouvrira la voie devant eux et bénira leurs familles",
+            "correct": true
+          },
+          {
+            "text": "Ils recevront immédiatement le pouvoir politique sur Far West",
+            "correct": false
+          },
+          {
+            "text": "Ils seront relevés de leur appel après un an",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour4": [
+      {
+        "question": "Quelle loi financière le Seigneur établit-il dans D&A 119 ?",
+        "answers": [
+          {
+            "text": "La loi de la dîme pour l'Église",
+            "correct": true
+          },
+          {
+            "text": "La loi de la consécration totale immédiate",
+            "correct": false
+          },
+          {
+            "text": "Une contribution volontaire sans engagement",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 119:1-2, que doivent apporter ceux qui entrent dans l'ordre de la dîme ?",
+        "answers": [
+          {
+            "text": "Leur surplus initial en biens et propriétés",
+            "correct": true
+          },
+          {
+            "text": "Une seule offrande symbolique",
+            "correct": false
+          },
+          {
+            "text": "La moitié de leurs revenus annuels",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Comment D&A 119:4 définit-il la dîme continue ?",
+        "answers": [
+          {
+            "text": "Un dixième de l'intérêt annuel de chacun",
+            "correct": true
+          },
+          {
+            "text": "Un dixième des heures de service rendues",
+            "correct": false
+          },
+          {
+            "text": "Un don volontaire fixé par l'évêque",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel objectif le Seigneur mentionne-t-il pour les dîmes dans D&A 119:2-3 ?",
+        "answers": [
+          {
+            "text": "Édifier Sion et soutenir les obligations de l'Église",
+            "correct": true
+          },
+          {
+            "text": "Financer des entreprises commerciales privées",
+            "correct": false
+          },
+          {
+            "text": "Offrir des récompenses matérielles aux dirigeants",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour5": [
+      {
+        "question": "Quelle autorité reçoit la charge de disposer des dîmes selon D&A 120:1 ?",
+        "answers": [
+          {
+            "text": "Un conseil composé de la Première Présidence, de l'évêque et de son conseil, et du grand conseil",
+            "correct": true
+          },
+          {
+            "text": "Uniquement le collège des Douze Apôtres",
+            "correct": false
+          },
+          {
+            "text": "Chaque évêque local agissant seul",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 120, comment ce conseil doit-il prendre ses décisions ?",
+        "answers": [
+          {
+            "text": "En cherchant la voix du Seigneur dans la prière",
+            "correct": true
+          },
+          {
+            "text": "Par vote populaire des membres",
+            "correct": false
+          },
+          {
+            "text": "En se basant sur les profits financiers prévus",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quelle bénédiction implicite ressort de l'obéissance à D&A 119-120 ?",
+        "answers": [
+          {
+            "text": "La capacité d'édifier Sion et de bénir les pauvres",
+            "correct": true
+          },
+          {
+            "text": "L'assurance de prospérité matérielle immédiate",
+            "correct": false
+          },
+          {
+            "text": "L'exemption de toute autre loi de l'Église",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Comment pouvons-nous aujourd'hui appliquer les conseils de D&A 120 ?",
+        "answers": [
+          {
+            "text": "Utiliser avec sagesse les fonds sacrés sous la direction des dirigeants inspirés",
+            "correct": true
+          },
+          {
+            "text": "Dépenser les dîmes selon nos préférences personnelles",
+            "correct": false
+          },
+          {
+            "text": "Réserver les dîmes uniquement pour la construction de temples",
+            "correct": false
+          }
+        ]
+      }
+    ]
   },
   "20–26 octobre | D&A 121–123": {
-    "jour1": [],
-    "jour2": [],
-    "jour3": [],
-    "jour4": [],
-    "jour5": []
+    "jour1": [
+      {
+        "question": "Quelle question Joseph Smith pose-t-il au Seigneur au début de D&A 121:1 ?",
+        "answers": [
+          {
+            "text": "Combien de temps les saints devront-ils endurer leurs souffrances ?",
+            "correct": true
+          },
+          {
+            "text": "Quand la construction du temple reprendra-t-elle ?",
+            "correct": false
+          },
+          {
+            "text": "Pourquoi les révélations sont-elles scellées ?",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que promet le Seigneur en réponse dans D&A 121:2-6 ?",
+        "answers": [
+          {
+            "text": "Ses oreilles sont ouvertes et Ses jugements viendront en temps voulu",
+            "correct": true
+          },
+          {
+            "text": "Les saints seront immédiatement délivrés de prison",
+            "correct": false
+          },
+          {
+            "text": "Aucune délivrance ne viendra avant plusieurs générations",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel encouragement personnel le Seigneur offre-t-il dans D&A 121:7-8 ?",
+        "answers": [
+          {
+            "text": "Que les afflictions seront pour un moment et qu'elles seront pour leur bien",
+            "correct": true
+          },
+          {
+            "text": "Qu'ils ne connaîtront plus jamais d'épreuves",
+            "correct": false
+          },
+          {
+            "text": "Qu'ils doivent prendre les armes pour se défendre",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quelle vision grandiose est rappelée à Joseph dans D&A 121:9-10 ?",
+        "answers": [
+          {
+            "text": "Il a vu le Fils de Dieu et témoigne de sa gloire",
+            "correct": true
+          },
+          {
+            "text": "Il recevra un ministère auprès des dix tribus",
+            "correct": false
+          },
+          {
+            "text": "Il doit se rendre immédiatement à Nauvoo",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour2": [
+      {
+        "question": "Selon D&A 121:13-15, que déclare le Seigneur au sujet de ceux qui accusent faussement les saints ?",
+        "answers": [
+          {
+            "text": "Leurs malédictions retomberont sur eux-mêmes",
+            "correct": true
+          },
+          {
+            "text": "Ils seront pardonnés sans condition",
+            "correct": false
+          },
+          {
+            "text": "Ils domineront les saints jusqu'à la fin",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que promet D&A 121:16-21 concernant les persécuteurs des justes ?",
+        "answers": [
+          {
+            "text": "Leurs plans seront dévoilés et ils seront confondus",
+            "correct": true
+          },
+          {
+            "text": "Ils seront instantanément détruits par le feu",
+            "correct": false
+          },
+          {
+            "text": "Ils recevront des positions d'autorité dans l'Église",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quel avertissement solennel est donné dans D&A 121:22-24 ?",
+        "answers": [
+          {
+            "text": "Les méchants connaîtront la vengeance de Dieu et seront bannis",
+            "correct": true
+          },
+          {
+            "text": "Les saints doivent se venger eux-mêmes",
+            "correct": false
+          },
+          {
+            "text": "Les persécutions cesseront immédiatement",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Comment D&A 121:26-28 décrit-il les bénédictions à venir pour les fidèles ?",
+        "answers": [
+          {
+            "text": "Le Seigneur révèlera des mystères puissants et des royaumes de joie",
+            "correct": true
+          },
+          {
+            "text": "Ils seront libérés de toute responsabilité",
+            "correct": false
+          },
+          {
+            "text": "Ils recevront des trésors matériels sans limites",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour3": [
+      {
+        "question": "Selon D&A 121:34-35, pourquoi beaucoup sont-ils appelés mais peu élus ?",
+        "answers": [
+          {
+            "text": "Parce que leurs cœurs regardent vers les choses du monde",
+            "correct": true
+          },
+          {
+            "text": "Parce qu'ils manquent de talents naturels",
+            "correct": false
+          },
+          {
+            "text": "Parce qu'ils n'ont pas encore reçu le baptême",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quels principes gouvernent l'autorité de la prêtrise selon D&A 121:36-37 ?",
+        "answers": [
+          {
+            "text": "Elle est maintenue par la justice, la persuasion et la douceur",
+            "correct": true
+          },
+          {
+            "text": "Elle dépend de la position sociale et de la force physique",
+            "correct": false
+          },
+          {
+            "text": "Elle permet l'exercice de la domination et de la contrainte",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que se passe-t-il lorsque quelqu'un domine injustement, selon D&A 121:37 ?",
+        "answers": [
+          {
+            "text": "L'Esprit du Seigneur se retire et son autorité est terminée",
+            "correct": true
+          },
+          {
+            "text": "Il reçoit un avertissement mais conserve son pouvoir",
+            "correct": false
+          },
+          {
+            "text": "Il progresse encore plus rapidement",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Quels attributs doivent caractériser le service dans la prêtrise d'après D&A 121:41-42 ?",
+        "answers": [
+          {
+            "text": "La persuasion, la longanimité, l'amour sincère et la bonté",
+            "correct": true
+          },
+          {
+            "text": "La rigueur, la crainte et la supériorité hiérarchique",
+            "correct": false
+          },
+          {
+            "text": "L'indifférence, l'efficacité et l'ambition personnelle",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour4": [
+      {
+        "question": "Quel message clé le Seigneur donne-t-il dans D&A 122:7-8 au sujet des épreuves ?",
+        "answers": [
+          {
+            "text": "Toutes ces choses te donneront de l'expérience et seront pour ton bien",
+            "correct": true
+          },
+          {
+            "text": "Les épreuves indiquent la désapprobation de Dieu",
+            "correct": false
+          },
+          {
+            "text": "Les épreuves doivent être évitées à tout prix",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que signifie D&A 122:8 concernant le rôle du Sauveur ?",
+        "answers": [
+          {
+            "text": "Le Fils de l'Homme a souffert plus que tous et comprend nos afflictions",
+            "correct": true
+          },
+          {
+            "text": "Le Sauveur ne peut être touché par les souffrances humaines",
+            "correct": false
+          },
+          {
+            "text": "Le Christ n'est pas impliqué dans nos expériences mortelles",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 122:9, quelle assurance le Seigneur offre-t-il à Joseph Smith ?",
+        "answers": [
+          {
+            "text": "Dieu sera avec lui pour toujours s'il reste fidèle",
+            "correct": true
+          },
+          {
+            "text": "Il sera libéré de prison le jour suivant",
+            "correct": false
+          },
+          {
+            "text": "Il n'aura plus besoin de prier pour l'aide divine",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Comment pouvons-nous appliquer D&A 122 aujourd'hui ?",
+        "answers": [
+          {
+            "text": "Faire confiance au Seigneur même lorsque les difficultés semblent accablantes",
+            "correct": true
+          },
+          {
+            "text": "Chercher à blâmer les autres pour nos épreuves",
+            "correct": false
+          },
+          {
+            "text": "Abandonner nos alliances durant les moments difficiles",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "jour5": [
+      {
+        "question": "Quel devoir D&A 123:1-5 confie-t-il aux saints malgré la persécution ?",
+        "answers": [
+          {
+            "text": "Rassembler des témoignages des injustices subies",
+            "correct": true
+          },
+          {
+            "text": "Prendre les armes contre leurs ennemis",
+            "correct": false
+          },
+          {
+            "text": "Quitter définitivement le Missouri",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Selon D&A 123:6-7, pourquoi ces documents sont-ils importants ?",
+        "answers": [
+          {
+            "text": "Pour exposer la méchanceté au monde et demander justice",
+            "correct": true
+          },
+          {
+            "text": "Pour planifier une vengeance secrète",
+            "correct": false
+          },
+          {
+            "text": "Pour justifier l'abandon de leurs responsabilités spirituelles",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Que promet D&A 123:12-14 aux saints qui persévèrent ?",
+        "answers": [
+          {
+            "text": "La lumière de l'Évangile pourra atteindre ceux qui sont encore dans les ténèbres",
+            "correct": true
+          },
+          {
+            "text": "Ils seront dispensés du commandement de partager l'Évangile",
+            "correct": false
+          },
+          {
+            "text": "Ils obtiendront réparation sans effort",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Comment D&A 123:17 conseille-t-il les saints de conclure leurs efforts ?",
+        "answers": [
+          {
+            "text": "Poursuivre diligemment tout devoir et se fier au Seigneur",
+            "correct": true
+          },
+          {
+            "text": "Attendre passivement que Dieu agisse sans effort",
+            "correct": false
+          },
+          {
+            "text": "Chercher des solutions uniquement temporelles",
+            "correct": false
+          }
+        ]
+      }
+    ]
   },
   "27 oct.–2 nov. | D&A 124": {
     "jour1": [],
